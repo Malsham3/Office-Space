@@ -1,13 +1,13 @@
 const router = require("express").Router();
 const leadsController = require("../../controllers/leadsController");
 
-// Matches with "/api/posts"
+// Matches with "/api/leads"
 router
   .route("/")
   .get(leadsController.findAll)
   .post(leadsController.create);
 
-// Matches with "/api/posts/:id"
+// Matches with "/api/leads/:id"
 router
   .route("/:id")
   .get(leadsController.findById)
