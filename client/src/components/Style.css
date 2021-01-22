@@ -1,6 +1,10 @@
 /* Header-container styling */
 .header-Jumbotron {
-    box-shadow: 0 0 10px white;
+    /* box-shadow: 0 0 10px white; */
+    color: rgb(64, 90, 204);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to right, rgba(255,255,255,1), rgb(49, 31, 112, 0.3));
+
 }
 
 /* Login-Form styling */
@@ -41,10 +45,6 @@
     align-self: center;
 }
 
-/* Footer styling */
-/* .footer-container{
-    
-} */
 
 .footer {
     background: whitesmoke;
