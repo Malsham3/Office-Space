@@ -15,3 +15,22 @@
 .login-form {
     align-self: center;
 }
+
+
+/* Signup-Form styling */
+.signup-container {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.signup-card {
+    height: 400px;
+    width: 600px;
+    align-self: center;
+    justify-content: center;
+}
+
+.signup-form {
+    align-self: center;
+}
