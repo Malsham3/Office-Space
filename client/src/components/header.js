@@ -9,7 +9,7 @@ function Header({ title, tag }) {
         style={{
           display: "flex",
           alignItems: "center",
-          height: "150px",
+          height: "100px",
           marginBottom: "0px",
         }}
         fluid
@@ -22,23 +22,7 @@ function Header({ title, tag }) {
       <div
         style={{
           display: "inline-block",
-          width: "33.33vw",
-          height: "30px",
-          border: "2px solid grey",
-        }}
-      ></div>
-      <div
-        style={{
-          display: "inline-block",
-          width: "33.33vw",
-          height: "30px",
-          border: "2px solid grey",
-        }}
-      ></div>
-      <div
-        style={{
-          display: "inline-block",
-          width: "33.33vw",
+          width: "100vw",
           height: "30px",
           border: "2px solid grey",
         }}
