@@ -1,36 +1,54 @@
 /* Login-Form styling */
 .login-container {
-    display: flex;
-    align-self: center;
-    justify-content: center;
+  display: flex;
+  align-self: center;
+  justify-content: center;
 }
 
 .login-card {
-    height: 300px;
-    width: 500px;
-    align-self: center;
-    justify-content: center;
+  height: 300px;
+  width: 500px;
+  align-self: center;
+  justify-content: center;
 }
 
 .login-form {
-    align-self: center;
+  align-self: center;
 }
-
 
 /* Signup-Form styling */
 .signup-container {
-    display: flex;
-    align-self: center;
-    justify-content: center;
+  display: flex;
+  align-self: center;
+  justify-content: center;
 }
 
 .signup-card {
-    height: 400px;
-    width: 600px;
-    align-self: center;
-    justify-content: center;
+  height: 400px;
+  width: 600px;
+  align-self: center;
+  justify-content: center;
 }
 
 .signup-form {
-    align-self: center;
+  align-self: center;
+}
+
+/* User Profile styling */
+.user-profile-card {
+  width: 33vw;
+  height: 100vh;
+  border: 3px solid grey;
+  marginleft: 15px;
+}
+
+.user-profile-card {
+  margin: auto;
+  margin-top: 30px;
+  border: 10px solid grey;
+  border-radius: 50%;
+  width: 90%;
+}
+.user-button {
+  height: "5rem";
 }
