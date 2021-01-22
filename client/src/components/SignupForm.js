@@ -8,7 +8,7 @@ function SignupForm() {
       <Card
         style={{
           borderRadius: "15px",
-          boxShadow: "0 0 25px whitesmoke",
+          boxShadow: "0 0 10px whitesmoke",
           background: "whitesmoke",
         }}
         className="signup-card"
