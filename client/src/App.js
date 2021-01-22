@@ -6,6 +6,7 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Footer from "./components/Footer"
 import { StoreProvider } from "./utils/GlobalState";
+import UserProfile from "./components/UserProfile";
 
 function App() {
   return (
