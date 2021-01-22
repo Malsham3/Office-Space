@@ -15,6 +15,9 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
+mongoose.set("useNewUrlParser", true);
+mongoose.set("useUnifiedTopology", true);
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactCRM");
 // Define API routes here
 

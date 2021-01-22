@@ -1,14 +1,12 @@
-import React from "react";
-import Header from "../components/header";
-import { Dropdown } from "react-bootstrap";
+import React from 'react'
+import Header from '../components/Header'
 
 function Login() {
-  return (
-    <div>
-      <Header />
-      <h1> We Did it </h1>
-    </div>
-  );
+    return (
+        <>
+            <Header title="Office Space" tag="I'll burn the building down"/>
+        </>
+    )
 }
 
 export default Login;

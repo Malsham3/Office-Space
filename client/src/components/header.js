@@ -1,22 +1,49 @@
 import React from "react";
-import Dropdown from "react-bootstrap/Dropdown";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
 
-function Header() {
+function Header({ title, tag }) {
   return (
-    <div>
-      <h1>nope</h1>
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Dropdown Button
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-    </div>
+    <>
+      <Jumbotron
+        style={{
+          display: "flex",
+          alignItems: "center",
+          height: "150px",
+          marginBottom: "0px",
+        }}
+        fluid
+      >
+        <Container style={{ marginLeft: "10px" }}>
+          <h1 style={{ fontWeight: "bold" }}>{title}</h1>
+          <p>{tag}.</p>
+        </Container>
+      </Jumbotron>
+      <div
+        style={{
+          display: "inline-block",
+          width: "33.33vw",
+          height: "30px",
+          border: "2px solid grey",
+        }}
+      ></div>
+      <div
+        style={{
+          display: "inline-block",
+          width: "33.33vw",
+          height: "30px",
+          border: "2px solid grey",
+        }}
+      ></div>
+      <div
+        style={{
+          display: "inline-block",
+          width: "33.33vw",
+          height: "30px",
+          border: "2px solid grey",
+        }}
+      ></div>
+    </>
   );
 }
 
