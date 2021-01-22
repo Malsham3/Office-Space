@@ -8,7 +8,7 @@ function LoginForm() {
     <Container className="login-container">
       <Card style = {
           {borderRadius: "15px",
-           boxShadow: "0 0 25px whitesmoke",
+           boxShadow: "0 0 10px whitesmoke",
            background: "whitesmoke"
           }} className="login-card">
         <Form className = "login-form">

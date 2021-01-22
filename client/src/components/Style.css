@@ -1,8 +1,14 @@
+/* Header-container styling */
+.header-Jumbotron {
+    box-shadow: 0 0 10px white;
+}
+
 /* Login-Form styling */
 .login-container {
     display: flex;
     align-self: center;
     justify-content: center;
+    padding-top: 100px;
 }
 
 .login-card {
@@ -19,6 +25,7 @@
 
 /* Signup-Form styling */
 .signup-container {
+    padding-top: 65px;
     display: flex;
     align-self: center;
     justify-content: center;
@@ -33,4 +40,24 @@
 
 .signup-form {
     align-self: center;
+}
+
+/* Footer styling */
+/* .footer-container{
+    
+} */
+
+.footer {
+    background: whitesmoke;
+    max-height: 95px;
+    box-shadow: 0 0 10px rgb(233, 230, 230);
+}
+
+
+.fa{
+    color: rgb(58, 58, 197, 0.9);
+    border-radius: 25px;
+}
+.fa:hover {
+  opacity: 0.7;
 }

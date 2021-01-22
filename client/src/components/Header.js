@@ -1,12 +1,14 @@
 import React from "react";
+import "./Style.css"
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 
 function Header({title, tag}) {
   return (
     <>
-      <Jumbotron
+      <Jumbotron className = "header-Jumbotron"
         style={{
+          backgroundColor: "white",
           display: "flex",
           alignItems: "center",
           height: "100px",
@@ -14,19 +16,11 @@ function Header({title, tag}) {
         }}
         fluid
       >
-        <Container style={{ marginLeft: "10px" }}>
+        <Container className = "header-container" style={{ marginLeft: "10px" }}>
           <h1 style={{ fontWeight: "bold" }}>{title}</h1>
           <p>{tag}.</p>
         </Container>
       </Jumbotron>
-      <div
-        style={{
-          display: "inline-block",
-          width: "100vw",
-          height: "30px",
-          border: "2px solid grey",
-        }}
-      ></div>
     </>
   );
 }
