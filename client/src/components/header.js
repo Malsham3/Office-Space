@@ -1,22 +1,18 @@
 import React from "react";
-import Dropdown from "react-bootstrap/Dropdown";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
 
-function Header() {
+function Header(props) {
   return (
-    <div>
-      <h1>nope</h1>
-      <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          Dropdown Button
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-          <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-          <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-          <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-    </div>
+    <Jumbotron fluid>
+  <Container>
+    <h1>{props.title}</h1>
+    <p>
+      This is a modified jumbotron that occupies the entire horizontal space of
+      its parent.
+    </p>
+  </Container>
+</Jumbotron>
   );
 }
 
