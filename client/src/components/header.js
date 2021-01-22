@@ -2,17 +2,48 @@ import React from "react";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Container from "react-bootstrap/Container";
 
-function Header(props) {
+function Header({ title, tag }) {
   return (
-    <Jumbotron fluid>
-  <Container>
-    <h1>{props.title}</h1>
-    <p>
-      This is a modified jumbotron that occupies the entire horizontal space of
-      its parent.
-    </p>
-  </Container>
-</Jumbotron>
+    <>
+      <Jumbotron
+        style={{
+          display: "flex",
+          alignItems: "center",
+          height: "150px",
+          marginBottom: "0px",
+        }}
+        fluid
+      >
+        <Container style={{ marginLeft: "10px" }}>
+          <h1 style={{ fontWeight: "bold" }}>{title}</h1>
+          <p>{tag}.</p>
+        </Container>
+      </Jumbotron>
+      <div
+        style={{
+          display: "inline-block",
+          width: "33.33vw",
+          height: "30px",
+          border: "2px solid grey",
+        }}
+      ></div>
+      <div
+        style={{
+          display: "inline-block",
+          width: "33.33vw",
+          height: "30px",
+          border: "2px solid grey",
+        }}
+      ></div>
+      <div
+        style={{
+          display: "inline-block",
+          width: "33.33vw",
+          height: "30px",
+          border: "2px solid grey",
+        }}
+      ></div>
+    </>
   );
 }
 
