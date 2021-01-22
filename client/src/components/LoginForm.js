@@ -3,10 +3,13 @@ import { Form, Button, Card, Container } from "react-bootstrap";
 import "./Style.css";
 
 function LoginForm() {
+  
   return (
     <Container className="login-container">
       <Card style = {
-          {borderRadius: "25px", boxShadow: "0 0 50px black"
+          {borderRadius: "15px",
+           boxShadow: "0 0 25px whitesmoke",
+           background: "whitesmoke"
           }} className="login-card">
         <Form className = "login-form">
           <Form.Group controlId="formBasicEmail">
@@ -22,7 +25,7 @@ function LoginForm() {
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
           <Button variant="primary" type="submit">
-            Login
+            Log In
           </Button>
         </Form>
       </Card>
