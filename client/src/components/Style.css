@@ -1,0 +1,17 @@
+/* Login-Form styling */
+.login-container {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.login-card {
+    height: 300px;
+    width: 500px;
+    align-self: center;
+    justify-content: center;
+}
+
+.login-form {
+    align-self: center;
+}
