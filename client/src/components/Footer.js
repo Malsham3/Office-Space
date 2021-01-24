@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 
 function Footer() {
   return (
@@ -16,7 +15,11 @@ function Footer() {
           </div>
 
           <div className="col-2">
-            <a href="https://github.com/Malsham3/Office-Space" target="_blank" className="fa fa-github fa-2x mr-1" />
+            <a
+              href="https://github.com/Malsham3/Office-Space"
+              target="_blank"
+              className="fa fa-github fa-2x mr-1"
+            />
           </div>
         </div>
       </div>

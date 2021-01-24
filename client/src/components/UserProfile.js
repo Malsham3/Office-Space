@@ -5,11 +5,11 @@ import Button from "react-bootstrap/Button";
 
 function UserProfile({ name, jobTitle, userPic }) {
   return (
-    <Card className="user-profile-card">
+    <Card className="user-profile-card" style={{ maxWidth: "400px" }}>
       <Card.Img
         className="user-image"
         variant="top"
-        src="https://avatars.githubusercontent.com/u/72281065?s=460&u=09e78bf1d0aa1708deb3a7d9f5cab7a5ed5b012d&v=4"
+        src="https://i.pinimg.com/564x/98/6d/39/986d39470fae3b16f0ae38b551267367.jpg"
       />
       <Card.Body>
         <Card.Title>{name}</Card.Title>

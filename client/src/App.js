@@ -1,27 +1,24 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
 import Home from "./pages/Home";
-import Footer from "./components/Footer"
+import SignOut from "./components/SignOut"
 import { StoreProvider } from "./utils/GlobalState";
-import UserProfile from "./components/UserProfile";
 
 function App() {
   return (
-    <>
+    <div>
       <Router>
         <StoreProvider>
           <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path= "/signup" component={Signup} />
-            <Route exact path="/home" component={Home} />
+            <Route exact path="/" component={Home} />
+            <Route path="/signout" component={SignOut} />
           </Switch>
         </StoreProvider>
       </Router>
-      <Footer />
-    </>
+    </div>
+      
+    
   );
 }
 
