@@ -14,11 +14,10 @@ function Header({title, tag}) {
           height: "100px",
           marginBottom: "0px",
         }}
-        fluid
       >
         <Container className = "header-container" style={{ marginLeft: "10px" }}>
           <h1 style={{ fontWeight: "bold" }}>{title}</h1>
-          <p>{tag}.</p>
+          <p style = {{ fontSize: "17px"}}>{tag}.</p>
         </Container>
       </Jumbotron>
     </>
