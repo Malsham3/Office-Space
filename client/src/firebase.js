@@ -1,17 +1,16 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
-
 const firebaseConfig = {
-    apiKey: "AIzaSyBuEaQc-VFFdNlVWeBhNFDr8evyef2chmY",
-    authDomain: "office-space-crm.firebaseapp.com",
-    databaseURL: "https://office-space-crm-default-rtdb.firebaseio.com",
-    projectId: "office-space-crm",
-    storageBucket: "office-space-crm.appspot.com",
-    messagingSenderId: "238325863839",
-    appId: "1:238325863839:web:3527c22b85b7f450c059aa",
-    measurementId: "G-F70GJBLHL4"
-  };
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP__APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+};
 let app = firebase.initializeApp(firebaseConfig);
 let db = app.firestore();
 
