@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 
 function UserProfile({ name, jobTitle, userPic }) {
   return (
-    <Card className="user-profile-card">
+    <Card className="user-profile-card" style={{maxWidth: "400px"}}>
       <Card.Img
         className="user-image"
         variant="top"
