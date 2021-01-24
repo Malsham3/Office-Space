@@ -4,13 +4,11 @@ import "./App.css";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
-import Footer from "./components/Footer"
 import { StoreProvider } from "./utils/GlobalState";
-import UserProfile from "./components/UserProfile";
 
 function App() {
   return (
-    <>
+    <div>
       <Router>
         <StoreProvider>
           <Switch>
@@ -20,8 +18,9 @@ function App() {
           </Switch>
         </StoreProvider>
       </Router>
-      <Footer />
-    </>
+    </div>
+      
+    
   );
 }
 
