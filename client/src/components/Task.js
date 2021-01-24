@@ -9,7 +9,7 @@ function Task({tasks}) {
     <tr key={task.id}>
       <td>{task.content}</td>
 
-      <td>
+      <td style={{width:"50px"}}>
       <InputGroup.Checkbox aria-label="Checkbox for task completion"/>
       </td>
 

@@ -10,7 +10,6 @@ function TasksContainer() {
       <thead>
         <tr>
           <th>Task</th>
-          <th>Status</th>
         </tr>
       </thead>
 
