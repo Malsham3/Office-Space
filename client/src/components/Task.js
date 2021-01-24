@@ -1,4 +1,5 @@
 import React from "react";
+import {InputGroup} from "react-bootstrap"
 
 function Task({tasks}) {
   return (
@@ -7,7 +8,11 @@ function Task({tasks}) {
     {tasks.map((task) => (
     <tr key={task.id}>
       <td>{task.content}</td>
-      <td>Button that marks task complete.</td>
+
+      <td style={{width:"50px"}}>
+      <InputGroup.Checkbox aria-label="Checkbox for task completion"/>
+      </td>
+
     </tr>
     ))}
     </>
