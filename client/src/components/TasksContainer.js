@@ -3,7 +3,19 @@ import {Table} from "react-bootstrap"
 import Task from "./Task"
 
 function TasksContainer() {
-  let tasks = [];
+  let tasks = [{
+    id: "stuff",
+    content: "get stuff done!"
+  },{
+    id: "stuff",
+    content: "get stuff done!"
+  },{
+    id: "stuff",
+    content: "get stuff done!"
+  },{
+    id: "stuff",
+    content: "get stuff done!"
+  }];
 
   return (
     <Table bordered hover>

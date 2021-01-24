@@ -49,6 +49,8 @@
     max-height: 95px;
     box-shadow: 0 0 10px rgb(233, 230, 230);
     position: bottom;
+    width: 100vw;
+    margin-top: 20px;
 }
 
 
@@ -63,18 +65,29 @@
 /* User Profile styling */
 .user-profile-card {
   width: 33vw;
-  height: 100vh;
+  height: 100%;
   border: 3px solid grey;
-  margin-left: 15px;
+  border-radius: 5px;
+  float: left;
+
+  
+}
+.Card.Img{
+  width: "80%";
+  height: "80%";
+  border: "4px double lightblue";
+  border-radius: "50%";
 }
 
-.user-profile-card {
-  margin: auto;
-  margin-top: 30px;
-  border: 10px solid grey;
-  border-radius: 50%;
-  width: 90%;
+.main-display-row{
+  border: 1px solid white;
+  max-width: 100vw;
 }
+
+.componentHolder{
+  width: 60%;
+}
+
 .user-button {
   height: "5rem";
 }

@@ -1,11 +1,12 @@
 import React from "react";
+import "./Style.css"
 
 function Footer() {
   return (
-    <footer className="footer mt-auto py-2">
+    <footer className="footer mt-2 py-2">
       <div className="container footer-container">
         <div className="row justify-content-between">
-          <div className="col-8">
+          <div className="col-12">
             <span className="text-muted">
               Made with ♥️ by Rick Smart, Danielle Cutler, Mostafa Alshammary,
               Bradley Campbell.
