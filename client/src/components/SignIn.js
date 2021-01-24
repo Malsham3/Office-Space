@@ -37,6 +37,20 @@ function SignIn() {
     }
   }
 
+  function handleInputChange(e) {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = e.target;
+
+    // Updating the input's state
+    SetCredentials({
+      ...credentials,
+      [name]: value,
+    });
+
+    console.log(credentials.email, "email");
+    console.log(credentials.password, "password");
+  }
+
   if (!signUp) {
     return (
       <Container className="login-container">
@@ -53,8 +67,10 @@ function SignIn() {
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 type="email"
+                name="email"
                 placeholder="Enter email"
                 value={credentials.email}
+                onChange={handleInputChange}
               />
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
@@ -65,8 +81,10 @@ function SignIn() {
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
+                name="password"
                 placeholder="Password"
                 value={credentials.password}
+                onChange={handleInputChange}
               />
             </Form.Group>
             <Button variant="primary" type="submit" onClick={handleSignIn}>
@@ -104,8 +122,10 @@ function SignIn() {
                 <Form.Label>Email</Form.Label>
                 <Form.Control
                   type="email"
+                  name="email"
                   placeholder="Enter email"
                   value={credentials.email}
+                  onChange={handleInputChange}
                 />
               </Form.Group>
             </Form.Row>
@@ -114,9 +134,11 @@ function SignIn() {
               <Form.Group as={Col} controlId="formGridPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
+                  name="password"
                   type="password"
                   placeholder="Password"
                   value={credentials.password}
+                  onChange={handleInputChange}
                 />
               </Form.Group>
             </Form.Row>
