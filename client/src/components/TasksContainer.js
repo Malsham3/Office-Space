@@ -6,7 +6,7 @@ function TasksContainer() {
   let tasks = [];
 
   return (
-    <Table striped bordered hover>
+    <Table bordered hover>
       <thead>
         <tr>
           <th>Task</th>
