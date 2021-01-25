@@ -133,8 +133,32 @@ body {
   margin-right: 5px;
 }
 
+.task-modal{
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+}
+
+.task-form{
+  margin-top: 10px;
+}
+
 #complete-task{
   position: absolute;
   right: 0;
-  margin-right: 98px;
+  margin-right: 47px;
+}
+
+#formGroupEmail{
+  width: 50%;
+  margin-left: 10px;
+}
+
+.task-body{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.new-task-button{
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 5px;
 }

@@ -34,7 +34,7 @@ function Task({ tasks }) {
                 {task.title}
               </Accordion.Toggle>
               <Button id="complete-task" variant="success"> Complete ✓</Button>
-              <Button id="delete-task" variant="danger" onClick={()=> {handleRemoveTask(task._id)} }>Delete X</Button>
+              <Button id="delete-task" variant="danger" onClick={()=> {handleRemoveTask(task._id)} }>X</Button>
             </Card.Header>
             <Accordion.Collapse eventKey="0">
               <Card.Body>{task.body}</Card.Body>
