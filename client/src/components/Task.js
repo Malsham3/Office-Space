@@ -2,12 +2,14 @@ import React from "react";
 import {InputGroup} from "react-bootstrap"
 
 function Task({tasks}) {
+
   return (
     // dynamically generate task row with a check box / button. 
     <>
     {tasks.map((task) => (
-    <tr key={task.id}>
-      <td>{task.content}</td>
+    <tr key={task._id}>
+      <td>{task.title}</td>
+      <td>{task.body}</td>
 
       <td style={{width:"50px"}}>
       <InputGroup.Checkbox aria-label="Checkbox for task completion"/>

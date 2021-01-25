@@ -1,54 +1,70 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
-import "./Style.css"
-
+import "./Style.css";
+import { useStoreContext } from "../utils/GlobalState";
+import API from "../utils/API";
 function ClientCard() {
+  const [globalState, dispatch] = useStoreContext();
   // Below array of clients is just an illustration for dynamically generated profile cards for each client. Use Global state or somethin'.
-  let clients = [
-    {
-      id: 1,
-      name: "Rick Smart",
-      image:
-        "https://avatars.githubusercontent.com/u/65750703?s=460&u=2d4de75e593192152a4ef0db17d74cf12151c047&v=4",
-      description: "Back-end and Firebase Authentication Master 🔥",
-      email: "Rick@Rick.Rick",
-      phone: "(123)456-7890",
-    },
-    {
-      id: 2,
-      name: "Rick Smart",
-      image:
-        "https://avatars.githubusercontent.com/u/65750703?s=460&u=2d4de75e593192152a4ef0db17d74cf12151c047&v=4",
-      description: "Back-end and Firebase Authentication Master 🔥",
-      email: "Rick@Rick.Rick",
-      phone: "(123)456-7890",
-    }
-  ];
+  let clients = globalState.leads;
+
+  useEffect(() => {
+    API.getLeads()
+      .then(({ data }) =>
+        dispatch({
+          type: "LOAD_LEADS",
+          payload: data,
+        })
+      )
+      .catch((err) => console.log(err));
+  }, []);
+
+  function handleRemoveClient(id) {
+    API.deleteLead(id)
+    .then(({ data }) => 
+    dispatch({
+      type: "REMOVE_LEAD",
+      payload: data,
+    })
+    )
+  }
 
   return (
     //   For each client, create a card with their information
     <>
       {clients.map((client) => (
-        <Card key={client.id} style={{ width: "18rem"}} className="ml-2">
-          <Card.Img
-          id = "client-image"
-            variant="top"
-            src={client.image}
-          />
+        <Card
+          key={client._id}
+          id={client._id}
+          style={{ width: "18rem" }}
+          className="ml-2"
+        >
+          <Card.Img id="client-image" variant="top" src={client.image} />
           <Card.Body>
             <Card.Title>{client.name}</Card.Title>
             <Card.Text>{client.description}</Card.Text>
           </Card.Body>
           <ListGroup className="list-group-flush">
-            <ListGroupItem>Email: {" "}
-            <Card.Link href={"mailto:" + client.email}>{client.email}</Card.Link>
-                </ListGroupItem>
+            <ListGroupItem>
+              Email:{" "}
+              <Card.Link href={"mailto:" + client.email}>
+                {client.email}
+              </Card.Link>
+            </ListGroupItem>
             <ListGroupItem>Phone: {client.phone}</ListGroupItem>
           </ListGroup>
           <Card.Body>
-
-              {/* REMOVE CLIENT FUNCTIONALITY NEEDED HERE */}
-            <Card.Link href="#">Remove Client</Card.Link>
+            {/* REMOVE CLIENT FUNCTIONALITY NEEDED HERE */}
+            <Card.Link
+            style={{color: "red"}}
+            href="#"
+            data={client._id}
+              onClick={() => {
+                handleRemoveClient(client._id);
+              }}
+            >
+              Remove Client
+            </Card.Link>
           </Card.Body>
         </Card>
       ))}
