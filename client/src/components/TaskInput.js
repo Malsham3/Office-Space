@@ -1,13 +1,17 @@
-import React, { useRef } from "react";
-import { Form, Button } from "react-bootstrap";
+import React, { useRef, useState } from "react";
+import { Form, Button, Modal } from "react-bootstrap";
 import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
 
 function TaskInput() {
   const [globalState, dispatch] = useStoreContext();
+  const [show, setShow] = useState(false);
 
   const titleRef = useRef("");
   const newTodoRef = useRef("");
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
    const handleNewTodo = (e) => {
     e.preventDefault();
@@ -28,10 +32,19 @@ function TaskInput() {
 
     titleRef.current.value = "";
     newTodoRef.current.value = "";
+
+    handleClose();
   };
 
   return (
-    <Form>
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        Add a task
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton></Modal.Header>
+          <Form>
       <Form.Group controlId="formGroupEmail">
         <Form.Control 
         type="text" 
@@ -49,13 +62,19 @@ function TaskInput() {
           required
         />
       </Form.Group>
-      <Button 
-      variant="primary"
-      onClick={(e)=>{handleNewTodo(e)}}
-      >
-        New Todo
-      </Button>{" "}
     </Form>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button 
+          onClick={(e)=>{handleNewTodo(e)}}
+          variant="primary">
+            Save
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }
 
