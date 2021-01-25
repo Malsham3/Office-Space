@@ -52,8 +52,8 @@ function Home() {
           <TasksContainer />
         </div>
         <div className="componentHolder ml-2" style={leadsDisplay}>
-          <NewLead />
           <ClientCard />
+          <NewLead />
         </div>
       </div>
       <Footer />
