@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Table } from "react-bootstrap";
+import TaskInput from "./TaskInput";
 import Task from "./Task";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
@@ -23,18 +24,15 @@ function TasksContainer() {
 
 
   return (
+    <div style={{width: "100%"}}>
+    <TaskInput></TaskInput>
     <Table bordered hover>
-      <thead>
-        <tr>
-          <th>Task</th>
-        </tr>
-      </thead>
-
       <tbody>
         {/* pass in the text/body of the task here */}
         <Task tasks={tasks} />
       </tbody>
     </Table>
+    </div>
   );
 }
 

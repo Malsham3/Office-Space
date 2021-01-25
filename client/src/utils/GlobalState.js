@@ -20,7 +20,7 @@ const reducer = (state, action) => {
     case "ADD_NOTE":
       return {
         ...state,
-        notes: [action.note, ...state.notes],
+        notes: [action.payload, ...state.notes],
       };
 
     case "REMOVE_NOTE":
@@ -31,11 +31,11 @@ const reducer = (state, action) => {
         }),
       };
 
-      case "LOAD_LEADS":
-        return {
-          ...state,
-          leads: action.payload
-        }
+    case "LOAD_LEADS":
+      return {
+        ...state,
+        leads: action.payload,
+      };
 
     case "ADD_LEAD":
       return {

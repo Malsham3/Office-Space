@@ -20,7 +20,9 @@ function UserProfile({ name, jobTitle, userPic }) {
     <Card className="user-profile-card">
       <Card.Img
         style={{
-          borderRadius: "50%",
+          margin: "20px auto",
+          width: "90%",
+          borderRadius: "5px",
         }}
         className="image-styles"
         variant="top"
