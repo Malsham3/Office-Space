@@ -1,29 +1,24 @@
-import React, {useEffect} from "react";
-import {Table} from "react-bootstrap"
-import Task from "./Task"
-import API from "../utils/API"
+import React, { useEffect } from "react";
+import { Table } from "react-bootstrap";
+import Task from "./Task";
+import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 
-
 function TasksContainer() {
+  const [globalState, dispatch] = useStoreContext();
+
   // the tasks array will need to be set to whatever gets returned from the server
   let tasks = [];
-
-  const getNotes = () => {
-    // dispatch({ type: LOADING });
-    API.getNotes()
-      .then(results => {
-        console.log(results)
-        // dispatch({
-        //   type: UPDATE_POSTS,
-        //   posts: results.data
-        // });
-      })
-      .catch(err => console.log(err));
-  };
-
   useEffect(() => {
-    getNotes();
+    API.getNotes()
+      .then((data) =>
+        dispatch({
+          type: "LOAD_TASKS",
+          payload: data,
+        })
+      )
+      .then(() => console.log(globalState.notes))
+      .catch((err) => console.log(err));
   }, []);
 
   return (
@@ -36,7 +31,7 @@ function TasksContainer() {
 
       <tbody>
         {/* pass in the text/body of the task here */}
-        <Task tasks = {tasks}/>
+        <Task tasks={tasks} />
       </tbody>
     </Table>
   );
