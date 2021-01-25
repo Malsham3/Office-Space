@@ -12,6 +12,7 @@ function Task({tasks}) {
       <td>{task.body}</td>
 
       <td style={{width:"50px"}}>
+      <label >Completed</label>
       <InputGroup.Checkbox aria-label="Checkbox for task completion"/>
       </td>
 

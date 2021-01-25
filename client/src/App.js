@@ -1,13 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./App.css";
 import Home from "./pages/Home";
 import SignOut from "./components/SignOut"
 import { StoreProvider } from "./utils/GlobalState";
 
 function App() {
   return (
-    <div>
+    <>
       <Router>
         <StoreProvider>
           <Switch>
@@ -16,7 +15,7 @@ function App() {
           </Switch>
         </StoreProvider>
       </Router>
-    </div>
+    </>
       
     
   );
