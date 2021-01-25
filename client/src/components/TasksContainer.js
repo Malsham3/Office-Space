@@ -26,11 +26,13 @@ function TasksContainer() {
   });
 
   return (
+    <div className="componentHolder ml-2">
     <div style={{ width: "100%" }}>
       <TaskInput />
       <Accordion>
         <Task tasks={tasks} />
       </Accordion>
+    </div>
     </div>
   );
 }

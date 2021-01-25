@@ -4,6 +4,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import "./Style.css";
 import { useStoreContext } from "../utils/GlobalState";
+import {Link} from "react-router-dom"
 
 function UserProfile({ name, jobTitle, userPic }) {
   // this will be how we decide what to view based on button click
@@ -34,6 +35,7 @@ function UserProfile({ name, jobTitle, userPic }) {
         <Card.Text>{jobTitle}</Card.Text>
       </Card.Body>
       <ButtonGroup vertical>
+      <Link to="/tasks">Tasks</Link>
         <Button
           className="user-button"
           name="task"
@@ -43,6 +45,7 @@ function UserProfile({ name, jobTitle, userPic }) {
         >
           Tasks
         </Button>
+        <Link to="/leads">Leads</Link>
         <Button
           className="user-button"
           name="leads"
@@ -52,12 +55,14 @@ function UserProfile({ name, jobTitle, userPic }) {
         >
           Leads
         </Button>
+        <Link to="/email">Email</Link>
         <Button
           className="user-button"
           name="email"
-          onClick={(e) => {
-            handleView(e.target.name);
-          }}
+
+          // onClick={(e) => {
+          //   handleView(e.target.name);
+          // }}
         >
           E-Mail
         </Button>
