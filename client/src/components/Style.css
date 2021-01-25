@@ -119,3 +119,22 @@ body {
 .user-button {
   height: "5rem";
 }
+
+
+/* Accordion styling */
+#task-header{
+  font-style: bold;
+  color:rgb(58, 56, 56);
+}
+
+#delete-task{
+  position: absolute;
+  right: 0;
+  margin-right: 5px;
+}
+
+#complete-task{
+  position: absolute;
+  right: 0;
+  margin-right: 98px;
+}
