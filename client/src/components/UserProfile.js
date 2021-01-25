@@ -9,13 +9,10 @@ function UserProfile({ name, jobTitle, userPic }) {
   return (
     <Card className="user-profile-card">
       <Card.Img
-      style={{
-        width: "80%",
-        height: "80%",
-        border: "4px double lightblue",
-        borderRadius: "50%"
-      }}
-        className="user-image mt-4 ml-auto mr-auto"
+        style={{
+          borderRadius: "50%",
+        }}
+        className="image-styles"
         variant="top"
         src="https://i.pinimg.com/564x/98/6d/39/986d39470fae3b16f0ae38b551267367.jpg"
       />
