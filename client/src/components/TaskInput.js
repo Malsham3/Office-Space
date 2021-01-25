@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
+import "./Style.css";
 
 function TaskInput() {
   // eslint-disable-next-line
@@ -37,13 +38,23 @@ function TaskInput() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Add a task
+      <Button
+        style={{ fontWeight: "300" }}
+        className="new-task-button"
+        variant="info"
+        onClick={handleShow}
+      >
+        New Task
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton></Modal.Header>
-        <Form>
+      <Modal className="task-modal" show={show} onHide={handleClose}>
+        <Modal.Header
+          style={{ fontWeight: "bold", color: "rgb(43, 41, 41)" }}
+          closeButton
+        >
+          Add a Task
+        </Modal.Header>
+        <Form className="task-form">
           <Form.Group controlId="formGroupEmail">
             <Form.Control
               type="text"
@@ -52,25 +63,25 @@ function TaskInput() {
               required
             />
           </Form.Group>
-          <Form.Group controlId="exampleForm.ControlTextarea1">
+          <Form.Group
+            className="task-body"
+            controlId="exampleForm.ControlTextarea1"
+          >
             <Form.Control
               as="textarea"
               rows={2}
-              placeholder="New Todo"
+              placeholder="Body"
               ref={newTodoRef}
               required
             />
           </Form.Group>
         </Form>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
           <Button
             onClick={(e) => {
               handleNewTodo(e);
             }}
-            variant="primary"
+            variant="info"
           >
             Save
           </Button>

@@ -37,6 +37,7 @@ function UserProfile({ name, jobTitle, userPic }) {
       <ButtonGroup vertical>
       <Link to="/tasks">Tasks</Link>
         <Button
+          style = {{backgroundColor: "rgb(63, 33, 233)"}}
           className="user-button"
           name="task"
           onClick={(e) => {
@@ -47,6 +48,7 @@ function UserProfile({ name, jobTitle, userPic }) {
         </Button>
         <Link to="/leads">Leads</Link>
         <Button
+        style = {{backgroundColor: "rgb(63, 33, 233)"}}
           className="user-button"
           name="leads"
           onClick={(e) => {
@@ -57,6 +59,7 @@ function UserProfile({ name, jobTitle, userPic }) {
         </Button>
         <Link to="/email">Email</Link>
         <Button
+        style = {{backgroundColor: "rgb(63, 33, 233)"}}
           className="user-button"
           name="email"
 
