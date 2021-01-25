@@ -34,6 +34,7 @@ function UserProfile({ name, jobTitle, userPic }) {
       </Card.Body>
       <ButtonGroup vertical>
         <Button
+          style = {{backgroundColor: "rgb(63, 33, 233)"}}
           className="user-button"
           name="task"
           onClick={(e) => {
@@ -43,6 +44,7 @@ function UserProfile({ name, jobTitle, userPic }) {
           Tasks
         </Button>
         <Button
+        style = {{backgroundColor: "rgb(63, 33, 233)"}}
           className="user-button"
           name="leads"
           onClick={(e) => {
@@ -52,6 +54,7 @@ function UserProfile({ name, jobTitle, userPic }) {
           Leads
         </Button>
         <Button
+        style = {{backgroundColor: "rgb(63, 33, 233)"}}
           className="user-button"
           name="email"
           onClick={(e) => {
