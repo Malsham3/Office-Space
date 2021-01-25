@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import TasksContainer from "../components/TasksContainer";
 import ClientCard from "../components/ClientCard";
 import { useStoreContext } from "../utils/GlobalState";
+import NewLead from "../components/NewLead";
 import "../components/Style.css";
 
 function Home() {
@@ -51,6 +52,7 @@ function Home() {
           <TasksContainer />
         </div>
         <div className="componentHolder ml-2" style={leadsDisplay}>
+          <NewLead />
           <ClientCard />
         </div>
       </div>

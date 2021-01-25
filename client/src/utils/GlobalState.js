@@ -40,7 +40,7 @@ const reducer = (state, action) => {
     case "ADD_LEAD":
       return {
         ...state,
-        leads: [action.leads, ...state.leads],
+        leads: [action.payload, ...state.leads],
       };
 
     case "UPDATE_LEAD":
