@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Table } from "react-bootstrap";
+import { Accordion } from "react-bootstrap";
 import TaskInput from "./TaskInput";
 import Task from "./Task";
 import API from "../utils/API";
@@ -27,13 +27,10 @@ function TasksContainer() {
 
   return (
     <div style={{width: "100%"}}>
-    <TaskInput></TaskInput>
-    <Table bordered hover>
-      <tbody>
-        {/* pass in the text/body of the task here */}
+    <TaskInput/>
+    <Accordion>
         <Task tasks={tasks} />
-      </tbody>
-    </Table>
+  </Accordion>
     </div>
   );
 }

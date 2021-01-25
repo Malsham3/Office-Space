@@ -112,10 +112,29 @@ body {
 .componentHolder {
   display: flex;
   width: 100%;
-  /* border: 2px solid black; */
+  border: 2px solid black;
   padding: 10px;
 }
 
 .user-button {
   height: "5rem";
+}
+
+
+/* Accordion styling */
+.task-header{
+  font-style: bold;
+  color:rgb(58, 56, 56);
+}
+
+#delete-task{
+  position: absolute;
+  right: 0;
+  margin-right: 5px;
+}
+
+#complete-task{
+  position: absolute;
+  right: 0;
+  margin-right: 98px;
 }

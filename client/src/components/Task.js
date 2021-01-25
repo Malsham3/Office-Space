@@ -1,6 +1,7 @@
+import { Accordion, Card, Button } from "react-bootstrap";
+import "./Style.css";
 import React, {useRef} from "react";
 import API from "../utils/API";
-import { Button } from "react-bootstrap";
 import { useStoreContext } from "../utils/GlobalState";
 
 function Task({ tasks }) {
@@ -15,25 +16,31 @@ function Task({ tasks }) {
       })
     );
   }
-
+  
   return (
     // dynamically generate task row with a check box / button.
     <>
       {tasks.map((task) => (
-        <tr key={task._id} id={task._id}>
-          <td>{task.title}</td>
-          <td>{task.body}</td>
-
-          <td>
-            <label>Completed</label>
-            <Button 
-            variant="danger"
-            onClick={() => {
-              handleRemoveTask(task._id);
-            }}
-            >Delete</Button>
-          </td>
-        </tr>
+        <Accordion key={task._id}>
+          <Card>
+            <Card.Header>
+              <Accordion.Toggle
+                className="task-header"
+                id={task._id}
+                as={Button}
+                variant="link"
+                eventKey="0"
+              >
+                {task.title}
+              </Accordion.Toggle>
+              <Button id="complete-task" variant="success"> Complete ✓</Button>
+              <Button id="delete-task" variant="danger" onClick={()=> {handleRemoveTask(task._id)} }>Delete X</Button>
+            </Card.Header>
+            <Accordion.Collapse eventKey="0">
+              <Card.Body>{task.body}</Card.Body>
+            </Accordion.Collapse>
+          </Card>
+        </Accordion>
       ))}
     </>
   );
