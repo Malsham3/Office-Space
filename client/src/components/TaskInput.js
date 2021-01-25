@@ -37,12 +37,14 @@ function TaskInput() {
 
   return (
     <>
-      <Button style = {{"fontWeight": "bold"}} className = "new-task-button" variant="info" onClick={handleShow}>
+      <Button style = {{"fontWeight": "300"}} className = "new-task-button" variant="info" onClick={handleShow}>
         New Task
       </Button>
 
       <Modal className = "task-modal" show={show} onHide={handleClose}>
-        <Modal.Header closeButton>Add a Task</Modal.Header>
+        <Modal.Header 
+        style = {{"fontWeight": "bold", "color": "rgb(43, 41, 41)"}} 
+        closeButton>Add a Task</Modal.Header>
         <Form className = "task-form">
           <Form.Group controlId="formGroupEmail">
             <Form.Control
@@ -67,7 +69,7 @@ function TaskInput() {
             onClick={(e) => {
               handleNewTodo(e);
             }}
-            variant="primary"
+            variant="info"
           >
             Save
           </Button>
