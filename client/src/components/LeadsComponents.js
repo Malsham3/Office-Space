@@ -1,7 +1,7 @@
 import React from 'react'
 import ClientCard from "./ClientCard"
 import NewLead from "./NewLead"
-import "../components/Style.css";
+import "./Style.css";
 
 function LeadsComponents() {
     return (
