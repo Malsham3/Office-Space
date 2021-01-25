@@ -1,22 +1,30 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Table} from "react-bootstrap"
 import Task from "./Task"
+import API from "../utils/API"
+import { useStoreContext } from "../utils/GlobalState";
+
 
 function TasksContainer() {
   // the tasks array will need to be set to whatever gets returned from the server
-  let tasks = [{
-    id: "stuff",
-    content: "get stuff done!"
-  },{
-    id: "things",
-    content: "get stuff done!"
-  },{
-    id: "stuff about things",
-    content: "get stuff done!"
-  },{
-    id: "things with stuff",
-    content: "get stuff done!"
-  }];
+  let tasks = [];
+
+  const getNotes = () => {
+    // dispatch({ type: LOADING });
+    API.getNotes()
+      .then(results => {
+        console.log(results)
+        // dispatch({
+        //   type: UPDATE_POSTS,
+        //   posts: results.data
+        // });
+      })
+      .catch(err => console.log(err));
+  };
+
+  useEffect(() => {
+    getNotes();
+  }, []);
 
   return (
     <Table bordered hover>
