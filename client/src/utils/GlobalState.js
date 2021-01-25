@@ -44,7 +44,12 @@ const reducer = (state, action) => {
           return note._id !== action._id;
         }),
       };
-
+    case "CHANGE_VIEW":
+      return {
+        ...state,
+        view: action.payload
+      };
+      
     default:
       return state;
   }
@@ -54,6 +59,7 @@ const StoreProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, {
     notes: [],
     leads: [],
+    view: "",
   });
 
   return <Provider value={[state, dispatch]} {...props} />;

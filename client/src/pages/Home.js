@@ -1,24 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import UserProfile from "../components/UserProfile";
 import Footer from "../components/Footer";
 import TasksContainer from "../components/TasksContainer";
 import ClientCard from "../components/ClientCard";
-import {useStoreContext} from "../utils/GlobalState"
-import "../components/Style.css"
+import { useStoreContext } from "../utils/GlobalState";
+import "../components/Style.css";
 
 function Home() {
-  
-  const [state, dispatch ] = useStoreContext()
+  const [globalState, dispatch] = useStoreContext();
 
-
-  const [showTasks, setShowTasks] = useState(false);
-  const taskDisplay = !showTasks ? { display: "none" } : {display: "inline-block"};
-  const [showLeads, setShowLeads] = useState(true);
-  const leadsDisplay = !showLeads ? { display: "none" } : {display: "inline-block"};
+  const [showTasks, setShowTasks] = useState(true);
+  const taskDisplay = !showTasks
+    ? { display: "none" }
+    : { display: "flex", width: "100%" };
+  const [showLeads, setShowLeads] = useState(false);
+  const leadsDisplay = !showLeads ? { display: "none" } : { display: "flex" };
   const [showEmails, setShowEmails] = useState(false);
-  const emailDispaly = !showEmails ? { display: "none" } : {display: "inline-block"};
+  const emailDispaly = !showEmails ? { display: "none" } : { display: "flex" };
 
+  useEffect(() => {
+    switch (globalState.view) {
+      case "task":
+        setShowTasks(true);
+        setShowLeads(false);
+        setShowEmails(false);
+        break;
+      case "leads":
+        setShowTasks(false);
+        setShowLeads(true);
+        setShowEmails(false);
+        return;
+      case "email":
+        setShowTasks(false);
+        setShowLeads(false);
+        setShowEmails(true);
+        return;
+      default:
+        break;
+    }
+  }, [globalState.view]);
 
   return (
     <>
