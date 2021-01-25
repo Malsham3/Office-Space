@@ -58,7 +58,6 @@ function ClientCard() {
             <Card.Link
             style={{color: "red"}}
             href="#"
-            data={client._id}
               onClick={() => {
                 handleRemoveClient(client._id);
               }}

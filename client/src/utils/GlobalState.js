@@ -27,7 +27,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         notes: state.notes.filter((note) => {
-          return note._id !== action._id;
+          return note._id !== action.payload._id;
         }),
       };
 
