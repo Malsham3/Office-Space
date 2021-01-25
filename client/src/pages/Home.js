@@ -9,6 +9,7 @@ import NewLead from "../components/NewLead";
 import "../components/Style.css";
 
 function Home() {
+  // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
 
   const [showTasks, setShowTasks] = useState(true);

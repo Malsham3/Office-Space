@@ -9,7 +9,7 @@ function Footer() {
         <div className="row justify-content-between">
           <div className="col-12">
             <span className="text-muted">
-              Made with ♥️ by Rick Smart, Danielle Cutler, Mostafa Alshammary,
+              Made with<span role="img" aria-label="Heart Emoji">♥️</span>  by Rick Smart, Danielle Cutler, Mostafa Alshammary,
               Bradley Campbell.
               <br />
               &copy; {new Date().getFullYear()}
@@ -21,7 +21,9 @@ function Footer() {
               href="https://github.com/Malsham3/Office-Space"
               target="_blank"
               className="fa fa-github fa-2x mr-1"
-            />
+              rel="noopener noreferrer"
+            >
+            </a>
           </div>
         </div>
       </div>

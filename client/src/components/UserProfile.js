@@ -7,6 +7,7 @@ import { useStoreContext } from "../utils/GlobalState";
 
 function UserProfile({ name, jobTitle, userPic }) {
   // this will be how we decide what to view based on button click
+  // eslint-disable-next-line
   const [state, dispatch] = useStoreContext();
 
   const handleView = (name) => {

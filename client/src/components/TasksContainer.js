@@ -13,24 +13,24 @@ function TasksContainer() {
 
   useEffect(() => {
     API.getNotes()
-      .then(({data}) =>
-        dispatch({
-          type: "LOAD_TASKS",
-          payload: data,
-        })
+      .then(({ data }) =>
+        dispatch(
+          {
+            type: "LOAD_TASKS",
+            payload: data,
+          },
+          []
+        )
       )
       .catch((err) => console.log(err));
-  }, []);
-
-  
-
+  });
 
   return (
-    <div style={{width: "100%"}}>
-    <TaskInput/>
-    <Accordion>
+    <div style={{ width: "100%" }}>
+      <TaskInput />
+      <Accordion>
         <Task tasks={tasks} />
-  </Accordion>
+      </Accordion>
     </div>
   );
 }
