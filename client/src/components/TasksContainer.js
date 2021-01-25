@@ -8,18 +8,19 @@ function TasksContainer() {
   const [globalState, dispatch] = useStoreContext();
 
   // the tasks array will need to be set to whatever gets returned from the server
-  let tasks = [];
+  let tasks = globalState.notes;
+
   useEffect(() => {
     API.getNotes()
-      .then((data) =>
+      .then(({data}) =>
         dispatch({
           type: "LOAD_TASKS",
           payload: data,
         })
       )
-      .then(() => console.log(globalState.notes))
       .catch((err) => console.log(err));
   }, []);
+
 
   return (
     <Table bordered hover>

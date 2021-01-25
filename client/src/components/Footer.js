@@ -1,9 +1,9 @@
 import React from "react";
-import "./Style.css"
+import "./Style.css";
 
 function Footer() {
   return (
-    <footer className="footer py-2">
+    <footer className="footer py-2" style={{ display: "none" }}>
       <div className="container footer-container">
         <div className="row justify-content-between">
           <div className="col-12">
