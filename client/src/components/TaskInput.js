@@ -14,9 +14,7 @@ function TaskInput() {
     API.saveNote({
       title: titleRef.current.value,
       body: newTodoRef.current.value,
-    // this is a default value until I figure out how to get
-    // the completed value from the task component
-      completed: true,
+      completed: false,
     })
       .then((result) => {
         dispatch({

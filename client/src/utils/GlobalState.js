@@ -27,7 +27,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         notes: state.notes.filter((note) => {
-          return note._id !== action._id;
+          return note._id !== action.payload._id;
         }),
       };
 
@@ -40,7 +40,7 @@ const reducer = (state, action) => {
     case "ADD_LEAD":
       return {
         ...state,
-        leads: [action.leads, ...state.leads],
+        leads: [action.payload, ...state.leads],
       };
 
     case "UPDATE_LEAD":
