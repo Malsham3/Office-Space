@@ -20,7 +20,6 @@ function Home() {
   const emailDispaly = !showEmails ? { display: "none" } : { display: "flex" };
 
   useEffect(() => {
-    if (!globalState) return;
 
     switch (globalState.view) {
       case "task":

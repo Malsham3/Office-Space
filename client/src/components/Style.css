@@ -88,9 +88,11 @@ body {
 /* User Profile styling */
 .user-profile-card {
   max-width: 33vh;
+  height: 80vh;
   border: 3px solid grey;
   border-radius: 5px;
   float: left;
+  margin-top: 10px;
 }
 .image-styles {
   border: 4px double lightblue;
@@ -98,7 +100,7 @@ body {
 
 .main-display-row {
   /* this is only being used to check the container size */
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   align-items: stretch;
   max-width: 100vw;
@@ -108,7 +110,10 @@ body {
 }
 
 .componentHolder {
-  width: 60%;
+  display: flex;
+  width: 100%;
+  /* border: 2px solid black; */
+  padding: 10px;
 }
 
 .user-button {
