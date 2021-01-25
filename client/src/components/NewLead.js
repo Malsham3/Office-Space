@@ -4,6 +4,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
 
 function NewLead() {
+  // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
 
   const nameRef = useRef();

@@ -4,9 +4,11 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import "./Style.css";
 import { useStoreContext } from "../utils/GlobalState";
+import {Link} from "react-router-dom"
 
 function UserProfile({ name, jobTitle, userPic }) {
   // this will be how we decide what to view based on button click
+  // eslint-disable-next-line
   const [state, dispatch] = useStoreContext();
 
   const handleView = (name) => {
@@ -33,6 +35,7 @@ function UserProfile({ name, jobTitle, userPic }) {
         <Card.Text>{jobTitle}</Card.Text>
       </Card.Body>
       <ButtonGroup vertical>
+      <Link to="/taskscomponents">Tasks</Link>
         <Button
           style = {{backgroundColor: "rgb(63, 33, 233)"}}
           className="user-button"
@@ -43,6 +46,7 @@ function UserProfile({ name, jobTitle, userPic }) {
         >
           Tasks
         </Button>
+        <Link to="/leadcomponents">Leads</Link>
         <Button
         style = {{backgroundColor: "rgb(63, 33, 233)"}}
           className="user-button"
@@ -53,13 +57,15 @@ function UserProfile({ name, jobTitle, userPic }) {
         >
           Leads
         </Button>
+        <Link to="/email">Email</Link>
         <Button
         style = {{backgroundColor: "rgb(63, 33, 233)"}}
           className="user-button"
           name="email"
-          onClick={(e) => {
-            handleView(e.target.name);
-          }}
+
+          // onClick={(e) => {
+          //   handleView(e.target.name);
+          // }}
         >
           E-Mail
         </Button>

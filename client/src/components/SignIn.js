@@ -62,6 +62,7 @@ function SignIn() {
           }}
           className="login-card"
         >
+          {errorMessage}
           <Form className="login-form">
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>

@@ -20,13 +20,12 @@ function ClientCard() {
   }, []);
 
   function handleRemoveClient(id) {
-    API.deleteLead(id)
-    .then(({ data }) => 
-    dispatch({
-      type: "REMOVE_LEAD",
-      payload: data,
-    })
-    )
+    API.deleteLead(id).then(({ data }) =>
+      dispatch({
+        type: "REMOVE_LEAD",
+        payload: data,
+      })
+    );
   }
 
   return (
@@ -56,8 +55,8 @@ function ClientCard() {
           <Card.Body>
             {/* REMOVE CLIENT FUNCTIONALITY NEEDED HERE */}
             <Card.Link
-            style={{color: "red"}}
-            href="#"
+              style={{ color: "red" }}
+              href="#"
               onClick={() => {
                 handleRemoveClient(client._id);
               }}
