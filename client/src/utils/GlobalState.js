@@ -5,6 +5,12 @@ const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "LOAD_TASKS":
+      return {
+        ...state,
+        notes: [action.payload],
+      };
+
     case "UPDATE_NOTES":
       return {
         ...state,
@@ -47,9 +53,9 @@ const reducer = (state, action) => {
     case "CHANGE_VIEW":
       return {
         ...state,
-        view: action.payload
+        view: action.payload,
       };
-      
+
     default:
       return state;
   }
