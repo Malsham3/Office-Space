@@ -91,13 +91,15 @@ function SignIn() {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={handleSignIn}>
+            <Button 
+            style= {{backgroundColor:"rgb(64, 90, 204)"}}
+            type="submit" onClick={handleSignIn}>
               Log In
             </Button>
 
             <Button
-              style={{ float: "right" }}
-              variant="primary"
+              style={{ float: "right", backgroundColor:"rgb(64, 90, 204)" }}
+              
               type="submit"
               onClick={() => {
                 setSignUp(true);

@@ -1,7 +1,8 @@
 import React from "react";
 import "./Style.css";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import Container from "react-bootstrap/Container";
+import {Jumbotron, Button} from "react-bootstrap"
+// import Jumbotron from "react-bootstrap/Jumbotron";
+// import Container from "react-bootstrap/Container";
 
 function Header({ title, tag }) {
   return (
@@ -18,12 +19,18 @@ function Header({ title, tag }) {
           padding: "0",
         }}
       >
-        <Container className="header-container">
+        <div className="header-head">
           <h1 style={{ fontWeight: "bold" }}>{title}</h1>
           <p style={{ fontSize: "17px" }}>{tag}.</p>
-        </Container>
+
+        </div>
         <div className="signout-anchor mr-3 ">
-          <a href="/signout">Sign Out</a>
+        <Button className="signout-button"
+        style={{ 
+        backgroundColor:"rgb(64, 90, 204)",
+      color: "white" }}
+        href="/signout" variant="light">Sign Out</Button>
+          {/* <a href="/signout">Sign Out</a> */}
         </div>
       </Jumbotron>
     </>

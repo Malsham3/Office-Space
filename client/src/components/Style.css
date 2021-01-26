@@ -28,6 +28,14 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.signout-button{
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header-head{
+  margin-left: 15px;
+}
+
 /* Login-Form styling */
 .login-container {
   display: flex;
