@@ -3,6 +3,7 @@
 *:after {
   box-sizing: inherit;
 }
+
 html {
   background: url(./images/bg3.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -13,13 +14,12 @@ html {
 
 body {
   position: relative;
-  height: 100%;
   margin: 0;
-  padding-bottom: 3rem;
   background: url("./images/bg3.jpg") no-repeat center center fixed;
   background-size: cover;
   font-family: sans-serif;
 }
+
 /* Header-container styling */
 .header-Jumbotron {
   margin: 10px;
@@ -67,16 +67,13 @@ body {
 }
 
 /* footer styling */
-.footer-div {
-  position: fixed;
-  bottom: 0;
+.footer-div{
+  position: relative;
   background: whitesmoke;
   box-shadow: 0 0 10px rgb(233, 230, 230);
   max-height: 100px;
-  margin: 0 10px;
   border-radius: 5px;
   width: 100vw;
-  align-self: center;
 }
 
 .fa {

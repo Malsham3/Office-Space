@@ -3,9 +3,7 @@ import "./Style.css";
 
 function Footer() {
   return (
-  
-      <div className="container footer-container">
-        <div className="row footer-div justify-content-between">
+        <footer className="row footer-div py-2">
           <div className="col-10">
             <span className="text-muted">
               Made with
@@ -26,8 +24,7 @@ function Footer() {
               rel="noopener noreferrer"
             ></a>
           </div>
-        </div>
-      </div>
+        </footer>
   );
 }
 
