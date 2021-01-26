@@ -25,7 +25,6 @@ function NewLead() {
       email: emailRef.current.value,
       phone: phoneRef.current.value,
       image: imageRef.current.value,
-      
     })
       .then((result) => {
         dispatch({
@@ -45,40 +44,40 @@ function NewLead() {
   //   <Form className="leads-form">
   //     <Form.Group controlId="formBasicEmail">
   //       <Form.Label>Name</Form.Label>
-  //       <Form.Control 
-  //       type="text" 
+  //       <Form.Control
+  //       type="text"
   //       placeholder="Name"
   //       ref={nameRef}
   //       />
   //     </Form.Group>
   //     <Form.Group controlId="formBasicEmail">
   //       <Form.Label>Email</Form.Label>
-  //       <Form.Control 
-  //       type="email" 
-  //       placeholder="Email" 
+  //       <Form.Control
+  //       type="email"
+  //       placeholder="Email"
   //       ref={emailRef}
   //       />
   //     </Form.Group>
   //     <Form.Group controlId="formBasicEmail">
   //       <Form.Label>Phone</Form.Label>
-  //       <Form.Control 
-  //       type="phone" 
-  //       placeholder="Phone" 
+  //       <Form.Control
+  //       type="phone"
+  //       placeholder="Phone"
   //       ref={phoneRef}
   //       />
   //     </Form.Group>
   //     <Form.Group controlId="formBasicEmail">
   //       <Form.Label>Image</Form.Label>
-  //       <Form.Control 
-  //       type="text" 
-  //       placeholder="Image" 
+  //       <Form.Control
+  //       type="text"
+  //       placeholder="Image"
   //       ref={imageRef}
-        
+
   //       />
   //     </Form.Group>
 
-  //     <Button 
-  //     variant="primary" 
+  //     <Button
+  //     variant="primary"
   //     onClick={(e)=>{handleNewLead(e)}}
   //     >
   //       Submit
@@ -89,7 +88,7 @@ function NewLead() {
   return (
     <>
       <Button
-        style = {{fontWeight: "bold"}}
+        style={{ fontWeight: "bold" }}
         className="new-task-button"
         variant="info"
         onClick={handleShow}
@@ -97,35 +96,53 @@ function NewLead() {
         New Lead
       </Button>
 
-      <Modal className="task-modal" show={show} onHide={handleClose}>
+      <Modal className="lead-modal" show={show} onHide={handleClose}>
         <Modal.Header
           style={{ fontWeight: "bold", color: "rgb(43, 41, 41)" }}
           closeButton
         >
           Add a Lead
         </Modal.Header>
-        <Form className="task-form">
+
+        <Form className="lead-form">
           <Form.Group controlId="formGroupEmail">
             <Form.Control
               type="text"
-              placeholder="Title"
-              ref=""
+              placeholder="Name"
+              ref={nameRef}
               required
             />
           </Form.Group>
-          <Form.Group
-            className="task-body"
-            controlId="exampleForm.ControlTextarea1"
+
+          <Form.Group controlId="formGroupEmail"
           >
             <Form.Control
-              as="textarea"
-              rows={2}
-              placeholder="Body"
-              ref=""
+              type="email"
+              placeholder="Email address"
+              ref={emailRef}
+              required
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formGroupEmail">
+            <Form.Control
+              type="text"
+              placeholder="Phone number"
+              ref={phoneRef}
+              required
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formGroupEmail">
+            <Form.Control
+              type="text"
+              placeholder="Image URL"
+              ref={imageRef}
               required
             />
           </Form.Group>
         </Form>
+
         <Modal.Footer>
           <Button
             onClick={(e) => {
@@ -139,7 +156,6 @@ function NewLead() {
       </Modal>
     </>
   );
-
 }
 
 export default NewLead;
