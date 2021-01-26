@@ -121,9 +121,21 @@ body {
   padding: 10px;
 }
 
+.button-group{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
 .user-button {
-  background-color: rgb(63, 33, 233);
-  height: "5rem";
+  font-family: Helvetica, sans-serif;
+  height: 3rem;
+}
+
+.user-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
 }
 
 /* Accordion styling */

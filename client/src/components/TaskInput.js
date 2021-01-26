@@ -39,7 +39,7 @@ function TaskInput() {
   return (
     <>
       <Button
-        style={{ fontWeight: "300" }}
+        style = {{fontWeight: "bold"}}
         className="new-task-button"
         variant="info"
         onClick={handleShow}
