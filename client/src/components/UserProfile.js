@@ -34,32 +34,31 @@ function UserProfile({ name, jobTitle, userPic }) {
         <Card.Title>{name}</Card.Title>
         <Card.Text>{jobTitle}</Card.Text>
       </Card.Body>
-      <ButtonGroup vertical>
-      <Link to="/home/taskscomponents">Tasks</Link>
+      <ButtonGroup className = "button-group" vertical>
         <Button
-          style = {{backgroundColor: "rgb(63, 33, 233)"}}
+          style = {{backgroundColor: "rgb(48, 61, 129)"}}
           className="user-button"
           name="task"
           onClick={(e) => {
             handleView(e.target.name);
           }}
         >
-          Tasks
+          <Link className = "user-links" to="/taskscomponents">Tasks</Link>
         </Button>
-        <Link to="/home/leadcomponents">Leads</Link>
+
         <Button
-        style = {{backgroundColor: "rgb(63, 33, 233)"}}
+        style = {{backgroundColor: "rgb(48, 61, 129)"}}
           className="user-button"
           name="leads"
           onClick={(e) => {
             handleView(e.target.name);
           }}
         >
-          Leads
+          <Link className = "user-links" to="/leadcomponents">Leads</Link>
         </Button>
-        <Link to="/email">Email</Link>
+
         <Button
-        style = {{backgroundColor: "rgb(63, 33, 233)"}}
+        style = {{backgroundColor: "rgb(48, 61, 129)"}}
           className="user-button"
           name="email"
 
@@ -67,7 +66,7 @@ function UserProfile({ name, jobTitle, userPic }) {
           //   handleView(e.target.name);
           // }}
         >
-          E-Mail
+          <Link className = "user-links" to="/email">Email</Link>
         </Button>
       </ButtonGroup>
     </Card>
