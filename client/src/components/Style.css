@@ -13,7 +13,6 @@ html {
 }
 
 body {
-  position: relative;
   margin: 0;
   background: url("./images/bg3.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -134,6 +133,7 @@ body {
   width: 100%;
   border: 2px solid black;
   padding: 10px;
+  margin-top: 10px;
 }
 .leads-form {
   background: whitesmoke;
@@ -144,6 +144,7 @@ body {
   min-width: 20vw;
   max-width: 20vw;
 }
+
 .client-cards {
   max-width: 195px;
   max-height: 400px;
