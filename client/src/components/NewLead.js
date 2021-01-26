@@ -109,7 +109,7 @@ function NewLead() {
             <Form.Control
               type="text"
               placeholder="Title"
-              ref=""
+              // ref=""
               required
             />
           </Form.Group>
@@ -121,7 +121,7 @@ function NewLead() {
               as="textarea"
               rows={2}
               placeholder="Body"
-              ref=""
+              // ref=""
               required
             />
           </Form.Group>
