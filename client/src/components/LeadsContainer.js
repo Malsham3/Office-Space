@@ -30,7 +30,6 @@ function LeadsContainer() {
           <NewLead />
           <Accordion>
             <Client clients = {clients} />
-            {/* <ClientCard clients={clients}/> */}
           </Accordion>
         </div>
       </div>
