@@ -3,6 +3,7 @@ import "./Style.css";
 import React from "react";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
+import ClientCard from "./ClientCard"
 
 function Client({clients}) {
   const [globalState, dispatch] = useStoreContext();
@@ -33,13 +34,13 @@ function Client({clients}) {
                 variant="link"
                 eventKey="0"
               >
-                {client.name}
+                {client.first} {client.last}
               </Accordion.Toggle>
               <Button id="delete-client" variant="danger" onClick={()=> {handleRemoveClient(client._id)} }>X</Button>
             </Card.Header>
             <Accordion.Collapse style={{"fontSize": "17px", "color": "rgb(36, 35, 35)"}} eventKey="0">
               <Card.Body>
-                  
+                  <ClientCard clients = {clients} />
                 </Card.Body>
             </Accordion.Collapse>
           </Card>

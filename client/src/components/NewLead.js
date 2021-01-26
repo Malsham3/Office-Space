@@ -13,7 +13,9 @@ function NewLead() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const nameRef = useRef();
+  const firstnameRef = useRef();
+  const lastnameRef = useRef();
+  // const nameRef = useRef();
   const emailRef = useRef();
   const phoneRef = useRef();
   const imageRef = useRef();
@@ -21,7 +23,9 @@ function NewLead() {
   const handleNewLead = (e) => {
     e.preventDefault();
     API.saveLead({
-      name: nameRef.current.value,
+      // name: nameRef.current.value,
+      first: firstnameRef.current.value,
+      last: lastnameRef.current.value,
       email: emailRef.current.value,
       phone: phoneRef.current.value,
       image: imageRef.current.value,
@@ -34,7 +38,8 @@ function NewLead() {
       })
       .catch((err) => console.log(err));
 
-    nameRef.current.value = "";
+    firstnameRef.current.value = "";
+    lastnameRef.current.value = "";
     emailRef.current.value = "";
     phoneRef.current.value = "";
     imageRef.current.value = "";
@@ -108,8 +113,17 @@ function NewLead() {
           <Form.Group controlId="formGroupEmail">
             <Form.Control
               type="text"
-              placeholder="Name"
-              ref={nameRef}
+              placeholder="First Name"
+              ref={firstnameRef}
+              required
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formGroupEmail">
+            <Form.Control
+              type="text"
+              placeholder="Last Name"
+              ref={lastnameRef}
               required
             />
           </Form.Group>
