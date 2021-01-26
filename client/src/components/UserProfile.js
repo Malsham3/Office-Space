@@ -66,7 +66,7 @@ function UserProfile({ name, jobTitle, userPic }) {
           //   handleView(e.target.name);
           // }}
         >
-          <Link className = "user-links" to="/email">Email</Link>
+          <Link className = "user-links" to="/home/email">Email</Link>
         </Button>
       </ButtonGroup>
     </Card>

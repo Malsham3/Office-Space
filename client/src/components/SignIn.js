@@ -72,7 +72,7 @@ function SignIn() {
               <Form.Control
                 type="email"
                 name="email"
-                placeholder="Enter email"
+                placeholder="Enter your email"
                 value={credentials.email}
                 onChange={handleInputChange}
               />
@@ -86,18 +86,20 @@ function SignIn() {
               <Form.Control
                 type="password"
                 name="password"
-                placeholder="Password"
+                placeholder="Enter your password"
                 value={credentials.password}
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Button variant="primary" type="submit" onClick={handleSignIn}>
+            <Button 
+            style= {{backgroundColor:"rgb(64, 90, 204)"}}
+            type="submit" onClick={handleSignIn}>
               Log In
             </Button>
 
             <Button
-              style={{ float: "right" }}
-              variant="primary"
+              style={{ float: "right", backgroundColor:"rgb(64, 90, 204)" }}
+              
               type="submit"
               onClick={() => {
                 setSignUp(true);
@@ -123,11 +125,11 @@ function SignIn() {
           <Form onSubmit={handleSignUp} className="signup-form">
             <Form.Row>
               <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Email</Form.Label>
+                <Form.Label>Enter your Email</Form.Label>
                 <Form.Control
                   type="email"
                   name="email"
-                  placeholder="Enter email"
+                  placeholder="Email"
                   value={credentials.email}
                   onChange={handleInputChange}
                 />
@@ -136,7 +138,7 @@ function SignIn() {
 
             <Form.Row>
               <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label>Password</Form.Label>
+                <Form.Label>Choose a Password</Form.Label>
                 <Form.Control
                   name="password"
                   type="password"
@@ -146,21 +148,26 @@ function SignIn() {
                 />
               </Form.Group>
             </Form.Row>
-
-            <Button variant="primary" type="submit" onClick={handleSignUp}>
+            <Form.Row>
+            <Button 
+            className= "create-button"
+            style={{backgroundColor:"rgb(64, 90, 204)"}} type="submit" onClick={handleSignUp}>
               Create account
             </Button>
+            </Form.Row>
 
+            <Form.Row>
             <Button
-              style={{ float: "right" }}
-              variant="primary"
+              className= "signup-buttons"
+              style={{ float: "right", backgroundColor:"rgb(64, 90, 204)" }}
               type="submit"
               onClick={() => {
                 setSignUp(false);
               }}
             >
-              Alread Have Account
+              Already Have an Account?
             </Button>
+            </Form.Row>
           </Form>
         </Card>
       </Container>

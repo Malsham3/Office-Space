@@ -1,5 +1,6 @@
 {
   "name": "mern",
+  "homepage": "http://localhost:3000/home",
   "version": "0.1.0",
   "description": "Mern Demo",
   "private": true,

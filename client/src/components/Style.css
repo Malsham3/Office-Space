@@ -3,6 +3,7 @@
 *:after {
   box-sizing: inherit;
 }
+
 html {
   background: url(./images/bg3.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -13,19 +14,26 @@ html {
 
 body {
   position: relative;
-  height: 100%;
   margin: 0;
-  padding-bottom: 3rem;
   background: url("./images/bg3.jpg") no-repeat center center fixed;
   background-size: cover;
   font-family: sans-serif;
 }
+
 /* Header-container styling */
 .header-Jumbotron {
   margin: 10px;
   box-shadow: 0 0 10px white;
   color: rgb(64, 90, 204);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.signout-button{
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header-head{
+  margin-left: 15px;
 }
 
 /* Login-Form styling */
@@ -49,7 +57,7 @@ body {
 
 /* Signup-Form styling */
 .signup-container {
-  padding-top: 65px;
+  padding-top: 80px;
   display: flex;
   align-self: center;
   justify-content: center;
@@ -64,22 +72,27 @@ body {
 
 .signup-form {
   align-self: center;
+  width: 60%;
 }
 
-.footer-2 {
+.signup-buttons {
+  margin-top: 6px;
+  margin-left: 5px;
+}
+
+.create-button {
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+/* footer styling */
+.footer-div{
   position: relative;
-  bottom: 0;
   background: whitesmoke;
   box-shadow: 0 0 10px rgb(233, 230, 230);
   max-height: 100px;
-  margin: 0 10px;
   border-radius: 5px;
-  width: 98vw;
-  align-self: center;
-}
-.footer-div {
-  position: relative;
-  bottom: 0;
+  width: 100vw;
 }
 
 .fa {
