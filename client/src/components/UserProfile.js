@@ -3,20 +3,10 @@ import Card from "react-bootstrap/Card";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import "./Style.css";
-import { useStoreContext } from "../utils/GlobalState";
 import {Link} from "react-router-dom"
 
 function UserProfile({ name, jobTitle, userPic }) {
   // this will be how we decide what to view based on button click
-  // eslint-disable-next-line
-  const [state, dispatch] = useStoreContext();
-
-  const handleView = (name) => {
-    dispatch({
-      type: "CHANGE_VIEW",
-      payload: name,
-    });
-  };
 
   return (
     <Card className="user-profile-card">
@@ -39,9 +29,6 @@ function UserProfile({ name, jobTitle, userPic }) {
           style = {{backgroundColor: "rgb(48, 61, 129)"}}
           className="user-button"
           name="task"
-          onClick={(e) => {
-            handleView(e.target.name);
-          }}
         >
           <Link className = "user-links" to="/home/taskscomponents">Tasks</Link>
         </Button>
@@ -50,9 +37,6 @@ function UserProfile({ name, jobTitle, userPic }) {
         style = {{backgroundColor: "rgb(48, 61, 129)"}}
           className="user-button"
           name="leads"
-          onClick={(e) => {
-            handleView(e.target.name);
-          }}
         >
           <Link className = "user-links" to="/home/leadcomponents">Leads</Link>
         </Button>
@@ -60,13 +44,9 @@ function UserProfile({ name, jobTitle, userPic }) {
         <Button
         style = {{backgroundColor: "rgb(48, 61, 129)"}}
           className="user-button"
-          name="email"
-
-          // onClick={(e) => {
-          //   handleView(e.target.name);
-          // }}
+          name="calendar"
         >
-          <Link className = "user-links" to="/home/email">Email</Link>
+          <Link className = "user-links" to="/home/calendarcomponents">Calendar</Link>
         </Button>
       </ButtonGroup>
     </Card>

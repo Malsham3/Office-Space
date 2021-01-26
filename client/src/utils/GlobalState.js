@@ -56,10 +56,30 @@ const reducer = (state, action) => {
           return lead._id !== action.payload._id;
         }),
       };
-    case "CHANGE_VIEW":
+    case "LOAD_DATES":
       return {
         ...state,
-        view: action.payload,
+        dates: action.payload,
+      };
+
+    case "ADD_DATE":
+      return {
+        ...state,
+        dates: [action.payload, ...state.dates],
+      };
+
+    case "UPDATE_DATE":
+      return {
+        ...state,
+        dates: [...state.dates],
+      };
+
+    case "REMOVE_DATE":
+      return {
+        ...state,
+        dates: state.dates.filter((date) => {
+          return date._id !== action.payload._id;
+        }),
       };
 
     default:
@@ -71,7 +91,7 @@ const StoreProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useReducer(reducer, {
     notes: [],
     leads: [],
-    view: "",
+    dates: [],
   });
 
   return <Provider value={[state, dispatch]} {...props} />;
