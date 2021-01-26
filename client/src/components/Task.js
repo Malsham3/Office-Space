@@ -36,7 +36,7 @@ function Task({ tasks }) {
               >
                 {task.title}
               </Accordion.Toggle>
-              <Button id="complete-task" variant="success"> Complete ✓</Button>
+              <Button id="complete-task" variant="info"> Complete ✓</Button>
               <Button id="delete-task" variant="danger" onClick={()=> {handleRemoveTask(task._id)} }>X</Button>
             </Card.Header>
             <Accordion.Collapse style={{"fontSize": "17px", "color": "rgb(36, 35, 35)"}} eventKey="0">
