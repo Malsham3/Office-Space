@@ -16,8 +16,8 @@ function App() {
         <StoreProvider>
           <Switch>
             {/* <Redirect to="/home" />; */}
-            <Route path="/" component={Home} />
-            <Route path="/signout" component={SignOut} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/signout" component={SignOut} />
           </Switch>
         </StoreProvider>
       </Router>
