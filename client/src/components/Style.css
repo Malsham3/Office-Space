@@ -173,7 +173,7 @@ body {
 }
 
 /* Accordion styling */
-.task-header {
+.task-header, .client-header {
   font-style: bold;
   color: rgb(58, 56, 56);
 }
@@ -199,7 +199,7 @@ body {
   margin-left: 10px;
 }
 
-#delete-task {
+#delete-task, #delete-client {
   position: absolute;
   right: 0;
   margin-top: 3px;
