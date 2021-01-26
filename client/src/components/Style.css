@@ -13,7 +13,6 @@ html {
 }
 
 body {
-  position: relative;
   margin: 0;
   background: url("./images/officespace.JPG") no-repeat center center fixed;
   background-size: cover;
@@ -127,6 +126,7 @@ body {
   max-width: 100%;
   max-height: 100%;
   padding: 10px;
+  margin-top: 15px;
   margin-bottom: 100px;
 }
 
@@ -136,6 +136,7 @@ body {
   width: 100%;
   /* border: 2px solid black; */
   padding: 10px;
+  margin-top: 10px;
 }
 .leads-form {
   background: whitesmoke;
@@ -147,6 +148,7 @@ body {
   max-width: 20vw;
   font-family: "Courier New", Courier, monospace;
 }
+
 .client-cards {
   max-width: 195px;
   max-height: 400px;
@@ -176,19 +178,24 @@ body {
 }
 
 /* Accordion styling */
-.task-header {
+.task-header, .client-header {
   font-style: bold;
   color: rgb(58, 56, 56);
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
 }
 
+<<<<<<< HEAD
 .task-modal {
   font-family: "Courier New", Courier, monospace;
+=======
+.task-modal, .lead-modal {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+>>>>>>> 741cb1ed8eadee22f2509168e4c3ba6ce45ae29b
   font-size: 25px;
 }
 
-.task-form {
+.task-form, .lead-form {
   margin-top: 10px;
 }
 
@@ -205,7 +212,7 @@ body {
   margin-left: 10px;
 }
 
-#delete-task {
+#delete-task, #delete-client {
   position: absolute;
   right: 0;
   margin-top: 3px;

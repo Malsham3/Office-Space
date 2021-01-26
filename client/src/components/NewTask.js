@@ -4,7 +4,7 @@ import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
 import "./Style.css";
 
-function TaskInput() {
+function NewTask() {
   // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
   const [show, setShow] = useState(false);
@@ -91,4 +91,4 @@ function TaskInput() {
   );
 }
 
-export default TaskInput;
+export default NewTask;

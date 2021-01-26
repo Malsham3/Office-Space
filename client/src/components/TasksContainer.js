@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Accordion } from "react-bootstrap";
-import TaskInput from "./TaskInput";
+import NewTask from "./NewTask";
 import Task from "./Task";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
@@ -28,7 +28,7 @@ function TasksContainer() {
   return (
     <div className="componentHolder ml-2">
       <div style={{ width: "100%" }}>
-        <TaskInput />
+        <NewTask />
         <Accordion>
           <Task tasks={tasks} />
         </Accordion>

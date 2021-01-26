@@ -3,20 +3,15 @@ import Card from "react-bootstrap/Card";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import "./Style.css";
+<<<<<<< HEAD
 import { useStoreContext } from "../utils/GlobalState";
 import { Link } from "react-router-dom";
+=======
+import {Link} from "react-router-dom"
+>>>>>>> 741cb1ed8eadee22f2509168e4c3ba6ce45ae29b
 
 function UserProfile({ name, jobTitle, userPic }) {
   // this will be how we decide what to view based on button click
-  // eslint-disable-next-line
-  const [state, dispatch] = useStoreContext();
-
-  const handleView = (name) => {
-    dispatch({
-      type: "CHANGE_VIEW",
-      payload: name,
-    });
-  };
 
   return (
     <Card className="user-profile-card">
@@ -39,9 +34,6 @@ function UserProfile({ name, jobTitle, userPic }) {
           style={{ backgroundColor: "rgb(3, 73, 94)" }}
           className="user-button"
           name="task"
-          onClick={(e) => {
-            handleView(e.target.name);
-          }}
         >
           <Link className="user-links" to="/home/taskscomponents">
             Tasks
@@ -52,9 +44,6 @@ function UserProfile({ name, jobTitle, userPic }) {
           style={{ backgroundColor: "rgb(3, 73, 94)" }}
           className="user-button"
           name="leads"
-          onClick={(e) => {
-            handleView(e.target.name);
-          }}
         >
           <Link className="user-links" to="/home/leadcomponents">
             Leads
@@ -64,15 +53,15 @@ function UserProfile({ name, jobTitle, userPic }) {
         <Button
           style={{ backgroundColor: "rgb(3, 73, 94)" }}
           className="user-button"
-          name="email"
-
-          // onClick={(e) => {
-          //   handleView(e.target.name);
-          // }}
+          name="calendar"
         >
+<<<<<<< HEAD
           <Link className="user-links" to="/home/email">
             Email
           </Link>
+=======
+          <Link className = "user-links" to="/home/calendarcomponents">Calendar</Link>
+>>>>>>> 741cb1ed8eadee22f2509168e4c3ba6ce45ae29b
         </Button>
       </ButtonGroup>
     </Card>

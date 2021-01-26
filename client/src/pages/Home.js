@@ -6,7 +6,8 @@ import TasksContainer from "../components/TasksContainer";
 import { useStoreContext, StoreProvider } from "../utils/GlobalState";
 // import ClientCard from "../components/ClientCard";
 // import NewLead from "../components/NewLead";
-import LeadsComponents from "../components/LeadsComponents";
+import LeadsContainer from "../components/LeadsContainer";
+import MyCalendar from "../components/MyCalendar";
 import "../components/Style.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -54,7 +55,8 @@ function Home() {
             <div className="main-display-row">
               <UserProfile />
               <Route path="/home/taskscomponents" component={TasksContainer} />
-              <Route path="/home/leadcomponents" component={LeadsComponents} />
+              <Route path="/home/leadcomponents" component={LeadsContainer} />
+              <Route path="/home/calendarcomponents" component={MyCalendar} />
             </div>
             <Footer />
           </div>
