@@ -38,7 +38,12 @@ function ClientCard() {
           style={{ width: "18rem" }}
           className="ml-2"
         >
-          <Card.Img id="client-image" variant="top" src={client.image} />
+          <Card.Img 
+          id="client-image" 
+          variant="top" 
+          src={client.image} 
+          stye={{height: "150px"}}
+          />
           <Card.Body>
             <Card.Title>{client.name}</Card.Title>
             <Card.Text>{client.description}</Card.Text>

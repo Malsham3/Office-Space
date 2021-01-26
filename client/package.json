@@ -4,6 +4,7 @@
   "description": "Mern Demo",
   "private": true,
   "proxy": "http://localhost:3001/",
+  "homepage": "http://localhost:3000/home",
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",

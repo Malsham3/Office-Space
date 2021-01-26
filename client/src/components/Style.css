@@ -92,7 +92,8 @@ body {
 
 /* User Profile styling */
 .user-profile-card {
-  max-width: 33vh;
+  max-width: 33vw;
+  min-width: 33vw;
   height: 80vh;
   border: 3px solid grey;
   border-radius: 5px;
