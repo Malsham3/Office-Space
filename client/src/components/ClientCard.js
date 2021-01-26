@@ -36,9 +36,14 @@ function ClientCard() {
           key={client._id}
           id={client._id}
           style={{ width: "18rem" }}
-          className="ml-2"
+          className="ml-2 client-cards"
         >
-          <Card.Img id="client-image" variant="top" src={client.image} />
+          <Card.Img 
+          id="client-image" 
+          variant="top" 
+          src={client.image} 
+          stye={{height: "150px"}}
+          />
           <Card.Body>
             <Card.Title>{client.name}</Card.Title>
             <Card.Text>{client.description}</Card.Text>
