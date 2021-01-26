@@ -9,12 +9,13 @@ function MyCalendar() {
         setDate(date)
     }
     
-  return (
-    <div className="componentHolder ml-2">
+    return (
+        <div className="componentHolder ml-2">
       <div style={{ width: "100%" }}>
         <Calendar onChange={onChange}
         value={date}
         />
+        <p>{date.toDateString()}</p>
 
       </div>
     </div>
