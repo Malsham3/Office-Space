@@ -34,8 +34,7 @@ function UserProfile({ name, jobTitle, userPic }) {
         <Card.Title>{name}</Card.Title>
         <Card.Text>{jobTitle}</Card.Text>
       </Card.Body>
-      <ButtonGroup vertical>
-      <Link to="/home/taskscomponents">Tasks</Link>
+      <ButtonGroup className = "button-group" vertical>
         <Button
           style = {{backgroundColor: "rgb(48, 61, 129)"}}
           className="user-button"
@@ -46,7 +45,7 @@ function UserProfile({ name, jobTitle, userPic }) {
         >
           <Link className = "user-links" to="/taskscomponents">Tasks</Link>
         </Button>
-        <Link to="/home/leadcomponents">Leads</Link>
+
         <Button
         style = {{backgroundColor: "rgb(48, 61, 129)"}}
           className="user-button"
