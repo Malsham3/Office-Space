@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { Card, ListGroup, ListGroupItem, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Style.css";
 import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
 
-function ClientCard({ clients }) {
+function ClientCard({ client }) {
   const [globalState, dispatch] = useStoreContext();
   // Below array of clients is just an illustration for dynamically generated profile cards for each client. Use Global state or somethin'.s
 
@@ -31,20 +32,26 @@ function ClientCard({ clients }) {
   return (
     //   For each client, create a card with their information
     <>
-      {clients.map((client) => (
-        <div className="row">
-          <ul className="col-8">
-            <li>Email: {client.email}</li>
-            <li>Phone Number: {client.phone}</li>
-          </ul>
+      <div className="row">
+        <ul className="col-10" style={{ maxHeight: "50%", listStyle: "none" }}>
+          <li>Email: {client.email}</li>
+          <br />
+          <li>Phone Number: {client.phone}</li>
+        </ul>
 
-          <div className="col-2">
-            <Image style = {{}}>
-              
-            </Image>
-          </div>
+        <div className="col-2" style={{ maxHeight: "50%" }}>
+          <Image src={client.image} thumbnail />
         </div>
-      ))}
+      </div>
+
+      <Link
+        onClick={() => {
+          handleRemoveClient(client._id);
+        }}
+        style={{ color: "red" }}
+      >
+        Remove Client
+      </Link>
     </>
   );
 }
