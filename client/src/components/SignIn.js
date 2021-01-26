@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { auth } from "../firebase";
 import { Form, Container, Card, Col, Button } from "react-bootstrap";
+import { Redirect } from "react-router-dom";
 import "./Style.css";
 
 function SignIn() {
+  
   let [credentials, SetCredentials] = useState({
     email: "",
     password: "",
@@ -46,10 +48,11 @@ function SignIn() {
       ...credentials,
       [name]: value,
     });
-
-    console.log(credentials.email, "email");
-    console.log(credentials.password, "password");
   }
+
+  const handleSetSignUp = () => {
+    return <Redirect to="/home/tasks" />;
+  };
 
   if (!signUp) {
     return (
