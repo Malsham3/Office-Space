@@ -4,7 +4,7 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import "./Style.css";
 import { useStoreContext } from "../utils/GlobalState";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function UserProfile({ name, jobTitle, userPic }) {
   // this will be how we decide what to view based on button click
@@ -34,31 +34,35 @@ function UserProfile({ name, jobTitle, userPic }) {
         <Card.Title>{name}</Card.Title>
         <Card.Text>{jobTitle}</Card.Text>
       </Card.Body>
-      <ButtonGroup className = "button-group" vertical>
+      <ButtonGroup className="button-group" vertical>
         <Button
-          style = {{backgroundColor: "rgb(48, 61, 129)"}}
+          style={{ backgroundColor: "rgb(3, 73, 94)" }}
           className="user-button"
           name="task"
           onClick={(e) => {
             handleView(e.target.name);
           }}
         >
-          <Link className = "user-links" to="/home/taskscomponents">Tasks</Link>
+          <Link className="user-links" to="/home/taskscomponents">
+            Tasks
+          </Link>
         </Button>
 
         <Button
-        style = {{backgroundColor: "rgb(48, 61, 129)"}}
+          style={{ backgroundColor: "rgb(3, 73, 94)" }}
           className="user-button"
           name="leads"
           onClick={(e) => {
             handleView(e.target.name);
           }}
         >
-          <Link className = "user-links" to="/home/leadcomponents">Leads</Link>
+          <Link className="user-links" to="/home/leadcomponents">
+            Leads
+          </Link>
         </Button>
 
         <Button
-        style = {{backgroundColor: "rgb(48, 61, 129)"}}
+          style={{ backgroundColor: "rgb(3, 73, 94)" }}
           className="user-button"
           name="email"
 
@@ -66,7 +70,9 @@ function UserProfile({ name, jobTitle, userPic }) {
           //   handleView(e.target.name);
           // }}
         >
-          <Link className = "user-links" to="/home/email">Email</Link>
+          <Link className="user-links" to="/home/email">
+            Email
+          </Link>
         </Button>
       </ButtonGroup>
     </Card>

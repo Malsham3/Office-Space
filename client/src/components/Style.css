@@ -5,7 +5,7 @@
 }
 
 html {
-  background: url(./images/bg3.jpg) no-repeat center center fixed;
+  background: url(./images/officespace.JPG) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -15,7 +15,7 @@ html {
 body {
   position: relative;
   margin: 0;
-  background: url("./images/bg3.jpg") no-repeat center center fixed;
+  background: url("./images/officespace.JPG") no-repeat center center fixed;
   background-size: cover;
   font-family: sans-serif;
 }
@@ -24,12 +24,12 @@ body {
 .header-Jumbotron {
   margin: 10px;
   box-shadow: 0 0 10px white;
-  color: rgb(64, 90, 204);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(248, 248, 250);
+  font-family: "Courier New", Courier, monospace;
 }
 
 .signout-button {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .header-head {
@@ -78,11 +78,13 @@ body {
 .signup-buttons {
   margin-top: 6px;
   margin-left: 5px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .create-button {
   margin-top: 20px;
   margin-left: 5px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 /* footer styling */
@@ -96,7 +98,7 @@ body {
 }
 
 .fa {
-  color: rgb(58, 58, 197, 0.9);
+  color: rgba(241, 25, 54, 0.9);
   border-radius: 25px;
 }
 .fa:hover {
@@ -119,7 +121,7 @@ body {
 
 .main-display-row {
   /* this is only being used to check the container size */
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   align-items: stretch;
   max-width: 100%;
@@ -132,7 +134,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   padding: 10px;
 }
 .leads-form {
@@ -143,6 +145,7 @@ body {
   margin: 10px;
   min-width: 20vw;
   max-width: 20vw;
+  font-family: "Courier New", Courier, monospace;
 }
 .client-cards {
   max-width: 195px;
@@ -157,11 +160,13 @@ body {
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 5px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .user-button {
-  font-family: Helvetica, sans-serif;
+  font-family: "Courier New", Courier, monospace;
   height: 3rem;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .user-links {
@@ -174,10 +179,12 @@ body {
 .task-header {
   font-style: bold;
   color: rgb(58, 56, 56);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
 }
 
 .task-modal {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Courier New", Courier, monospace;
   font-size: 25px;
 }
 
@@ -190,6 +197,7 @@ body {
   right: 0;
   margin-top: 3px;
   margin-right: 47px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 #formGroupEmail {
@@ -202,6 +210,7 @@ body {
   right: 0;
   margin-top: 3px;
   margin-right: 5px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .task-body {
@@ -210,7 +219,7 @@ body {
 }
 
 .new-task-button {
-  color: rgb(61, 59, 59);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(3, 73, 94);
+  font-family: "Courier New", Courier, monospace;
   margin-bottom: 5px;
 }
