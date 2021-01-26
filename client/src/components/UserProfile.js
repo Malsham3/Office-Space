@@ -43,7 +43,7 @@ function UserProfile({ name, jobTitle, userPic }) {
             handleView(e.target.name);
           }}
         >
-          <Link className = "user-links" to="/taskscomponents">Tasks</Link>
+          <Link className = "user-links" to="/home/taskscomponents">Tasks</Link>
         </Button>
 
         <Button
@@ -54,7 +54,7 @@ function UserProfile({ name, jobTitle, userPic }) {
             handleView(e.target.name);
           }}
         >
-          <Link className = "user-links" to="/leadcomponents">Leads</Link>
+          <Link className = "user-links" to="/home/leadcomponents">Leads</Link>
         </Button>
 
         <Button

@@ -16,7 +16,7 @@ function App() {
         <StoreProvider>
           <Switch>
             {/* <Redirect to="/home" />; */}
-            <Route exact path="/" component={Home} />
+            <Route path="/home" component={Home} />
             <Route exact path="/signout" component={SignOut} />
           </Switch>
         </StoreProvider>
