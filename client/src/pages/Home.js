@@ -53,8 +53,8 @@ function Home() {
             <Header title="Office Space" tag="I'll burn the building down" />
             <div className="main-display-row">
               <UserProfile />
-              <Route path="/home/taskscomponents" component={TasksContainer} />
-              <Route path="/home/leadcomponents" component={LeadsComponents} />
+              <Route path="/taskscomponents" component={TasksContainer} />
+              <Route path="/leadcomponents" component={LeadsComponents} />
             </div>
             <Footer />
           </div>

@@ -1,7 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import Home from "./pages/Home";
-import SignOut from "./components/SignOut"
+import SignOut from "./components/SignOut";
 import { StoreProvider } from "./utils/GlobalState";
 
 function App() {
@@ -10,8 +15,9 @@ function App() {
       <Router>
         <StoreProvider>
           <Switch>
-            <Route path="/" component={Home} />
-            <Route path="/signout" component={SignOut} />
+            {/* <Redirect to="/home" />; */}
+            <Route exact path="/" component={Home} />
+            <Route exact path="/signout" component={SignOut} />
           </Switch>
         </StoreProvider>
       </Router>

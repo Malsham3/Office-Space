@@ -7,8 +7,9 @@ import Signup from "./pages/Signup";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 auth().onAuthStateChanged((user) => {
+  console.log(user)
   if (!user) {
-    ReactDOM.render(<Signup></Signup>, document.getElementById("root"));
+    ReactDOM.render(<Signup />, document.getElementById("root"));
   } else {
     ReactDOM.render(<App />, document.getElementById("root"));
   }
