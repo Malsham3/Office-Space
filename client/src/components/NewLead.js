@@ -43,52 +43,9 @@ function NewLead() {
     emailRef.current.value = "";
     phoneRef.current.value = "";
     imageRef.current.value = "";
+
+    handleClose();
   };
-
-  //  return (
-  //   <Form className="leads-form">
-  //     <Form.Group controlId="formBasicEmail">
-  //       <Form.Label>Name</Form.Label>
-  //       <Form.Control
-  //       type="text"
-  //       placeholder="Name"
-  //       ref={nameRef}
-  //       />
-  //     </Form.Group>
-  //     <Form.Group controlId="formBasicEmail">
-  //       <Form.Label>Email</Form.Label>
-  //       <Form.Control
-  //       type="email"
-  //       placeholder="Email"
-  //       ref={emailRef}
-  //       />
-  //     </Form.Group>
-  //     <Form.Group controlId="formBasicEmail">
-  //       <Form.Label>Phone</Form.Label>
-  //       <Form.Control
-  //       type="phone"
-  //       placeholder="Phone"
-  //       ref={phoneRef}
-  //       />
-  //     </Form.Group>
-  //     <Form.Group controlId="formBasicEmail">
-  //       <Form.Label>Image</Form.Label>
-  //       <Form.Control
-  //       type="text"
-  //       placeholder="Image"
-  //       ref={imageRef}
-
-  //       />
-  //     </Form.Group>
-
-  //     <Button
-  //     variant="primary"
-  //     onClick={(e)=>{handleNewLead(e)}}
-  //     >
-  //       Submit
-  //     </Button>
-  //   </Form>
-  // );
 
   return (
     <>

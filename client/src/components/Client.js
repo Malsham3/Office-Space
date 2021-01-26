@@ -36,7 +36,6 @@ function Client({clients}) {
               >
                 {client.first} {client.last}
               </Accordion.Toggle>
-              {/* <Button id="delete-client" variant="danger" onClick={()=> {handleRemoveClient(client._id)} }>X</Button> */}
             </Card.Header>
             <Accordion.Collapse style={{"fontSize": "17px", "color": "rgb(36, 35, 35)"}} eventKey="0">
               <Card.Body>
