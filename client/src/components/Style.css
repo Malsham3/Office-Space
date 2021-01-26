@@ -57,7 +57,7 @@ body {
 
 /* Signup-Form styling */
 .signup-container {
-  padding-top: 65px;
+  padding-top: 80px;
   display: flex;
   align-self: center;
   justify-content: center;
@@ -72,6 +72,17 @@ body {
 
 .signup-form {
   align-self: center;
+  width: 60%;
+}
+
+.signup-buttons {
+  margin-top: 6px;
+  margin-left: 5px;
+}
+
+.create-button {
+  margin-top: 20px;
+  margin-left: 5px;
 }
 
 /* footer styling */
