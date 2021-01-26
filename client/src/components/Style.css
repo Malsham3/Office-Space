@@ -13,7 +13,6 @@ html {
 }
 
 body {
-  position: relative;
   margin: 0;
   background: url("./images/bg3.jpg") no-repeat center center fixed;
   background-size: cover;
@@ -87,7 +86,6 @@ body {
 
 /* footer styling */
 .footer-div{
-  position: relative;
   background: whitesmoke;
   box-shadow: 0 0 10px rgb(233, 230, 230);
   max-height: 100px;
@@ -107,7 +105,7 @@ body {
 .user-profile-card {
   max-width: 33vw;
   min-width: 33vw;
-  height: 80vh;
+  /* height: 80vh; */
   border: 3px solid grey;
   border-radius: 5px;
   float: left;
@@ -123,9 +121,9 @@ body {
   display: flex;
   align-items: stretch;
   max-width: 100vw;
-  max-height: 100vh;
-  padding: 10px;
-  margin-bottom: 100px;
+  padding: 20px;
+  margin-bottom: 50px;
+  margin-top: 10px;
 }
 
 .componentHolder {
@@ -134,6 +132,7 @@ body {
   width: 100%;
   border: 2px solid black;
   padding: 10px;
+  margin-top: 10px;
 }
 .leads-form {
   background: whitesmoke;
@@ -144,6 +143,7 @@ body {
   min-width: 20vw;
   max-width: 20vw;
 }
+
 .client-cards {
   max-width: 195px;
   max-height: 400px;

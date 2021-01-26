@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { Button, Form } from "react-bootstrap";
+import React, { useRef, useState } from "react";
+import { Button, Form, Modal } from "react-bootstrap";
 import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
 import "./Style.css";
@@ -7,6 +7,11 @@ import "./Style.css";
 function NewLead() {
   // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const nameRef = useRef();
   const emailRef = useRef();
@@ -36,50 +41,105 @@ function NewLead() {
     imageRef.current.value = "";
   };
 
-  return (
-    <Form className="leads-form">
-      <Form.Group controlId="formBasicEmail">
-        <Form.Label>Name</Form.Label>
-        <Form.Control 
-        type="text" 
-        placeholder="Name"
-        ref={nameRef}
-        />
-      </Form.Group>
-      <Form.Group controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
-        <Form.Control 
-        type="email" 
-        placeholder="Email" 
-        ref={emailRef}
-        />
-      </Form.Group>
-      <Form.Group controlId="formBasicEmail">
-        <Form.Label>Phone</Form.Label>
-        <Form.Control 
-        type="phone" 
-        placeholder="Phone" 
-        ref={phoneRef}
-        />
-      </Form.Group>
-      <Form.Group controlId="formBasicEmail">
-        <Form.Label>Image</Form.Label>
-        <Form.Control 
-        type="text" 
-        placeholder="Image" 
-        ref={imageRef}
+  //  return (
+  //   <Form className="leads-form">
+  //     <Form.Group controlId="formBasicEmail">
+  //       <Form.Label>Name</Form.Label>
+  //       <Form.Control 
+  //       type="text" 
+  //       placeholder="Name"
+  //       ref={nameRef}
+  //       />
+  //     </Form.Group>
+  //     <Form.Group controlId="formBasicEmail">
+  //       <Form.Label>Email</Form.Label>
+  //       <Form.Control 
+  //       type="email" 
+  //       placeholder="Email" 
+  //       ref={emailRef}
+  //       />
+  //     </Form.Group>
+  //     <Form.Group controlId="formBasicEmail">
+  //       <Form.Label>Phone</Form.Label>
+  //       <Form.Control 
+  //       type="phone" 
+  //       placeholder="Phone" 
+  //       ref={phoneRef}
+  //       />
+  //     </Form.Group>
+  //     <Form.Group controlId="formBasicEmail">
+  //       <Form.Label>Image</Form.Label>
+  //       <Form.Control 
+  //       type="text" 
+  //       placeholder="Image" 
+  //       ref={imageRef}
         
-        />
-      </Form.Group>
+  //       />
+  //     </Form.Group>
 
-      <Button 
-      variant="primary" 
-      onClick={(e)=>{handleNewLead(e)}}
+  //     <Button 
+  //     variant="primary" 
+  //     onClick={(e)=>{handleNewLead(e)}}
+  //     >
+  //       Submit
+  //     </Button>
+  //   </Form>
+  // );
+
+  return (
+    <>
+      <Button
+        style = {{fontWeight: "bold"}}
+        className="new-task-button"
+        variant="info"
+        onClick={handleShow}
       >
-        Submit
+        New Lead
       </Button>
-    </Form>
+
+      <Modal className="task-modal" show={show} onHide={handleClose}>
+        <Modal.Header
+          style={{ fontWeight: "bold", color: "rgb(43, 41, 41)" }}
+          closeButton
+        >
+          Add a Lead
+        </Modal.Header>
+        <Form className="task-form">
+          <Form.Group controlId="formGroupEmail">
+            <Form.Control
+              type="text"
+              placeholder="Title"
+              ref=""
+              required
+            />
+          </Form.Group>
+          <Form.Group
+            className="task-body"
+            controlId="exampleForm.ControlTextarea1"
+          >
+            <Form.Control
+              as="textarea"
+              rows={2}
+              placeholder="Body"
+              ref=""
+              required
+            />
+          </Form.Group>
+        </Form>
+        <Modal.Footer>
+          <Button
+            onClick={(e) => {
+              handleNewLead(e);
+            }}
+            variant="info"
+          >
+            Save
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
+
 }
 
 export default NewLead;
