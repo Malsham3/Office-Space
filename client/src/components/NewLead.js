@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
+import "./Style.css";
 
 function NewLead() {
   // eslint-disable-next-line
@@ -36,7 +37,7 @@ function NewLead() {
   };
 
   return (
-    <Form>
+    <Form className="leads-form">
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Name</Form.Label>
         <Form.Control 

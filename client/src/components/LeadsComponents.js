@@ -5,10 +5,12 @@ import "./Style.css";
 
 function LeadsComponents() {
     return (
+        <>
         <div className="componentHolder ml-2">
                 <ClientCard />
-                <NewLead />
               </div>
+                <NewLead />
+                </>
     )
 }
 

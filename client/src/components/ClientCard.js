@@ -36,7 +36,7 @@ function ClientCard() {
           key={client._id}
           id={client._id}
           style={{ width: "18rem" }}
-          className="ml-2"
+          className="ml-2 client-cards"
         >
           <Card.Img 
           id="client-image" 
