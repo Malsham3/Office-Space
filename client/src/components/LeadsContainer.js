@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import {Accordion} from 'react-bootstrap'
 import ClientCard from "./ClientCard"
 import NewLead from "./NewLead"
+import Client from "./Client"
 import "./Style.css";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
@@ -28,7 +29,8 @@ function LeadsContainer() {
         <div style={{ width: "100%" }}>
           <NewLead />
           <Accordion>
-            <ClientCard clients={clients}/>
+            <Client clients = {clients} />
+            {/* <ClientCard clients={clients}/> */}
           </Accordion>
         </div>
       </div>

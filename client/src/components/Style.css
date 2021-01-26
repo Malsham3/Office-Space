@@ -124,6 +124,7 @@ body {
   max-width: 100%;
   max-height: 100%;
   padding: 10px;
+  margin-top: 15px;
   margin-bottom: 100px;
 }
 
@@ -172,17 +173,17 @@ body {
 }
 
 /* Accordion styling */
-.task-header {
+.task-header, .client-header {
   font-style: bold;
   color: rgb(58, 56, 56);
 }
 
-.task-modal {
+.task-modal, .lead-modal {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 25px;
 }
 
-.task-form {
+.task-form, .lead-form {
   margin-top: 10px;
 }
 
@@ -198,7 +199,7 @@ body {
   margin-left: 10px;
 }
 
-#delete-task {
+#delete-task, #delete-client {
   position: absolute;
   right: 0;
   margin-top: 3px;
