@@ -8,9 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 auth().onAuthStateChanged((user) => {
-
-
-  console.log(user)
+  // console.log(user)
   if (!user) {
     ReactDOM.render(<Signup />, document.getElementById("root"));
   } else {

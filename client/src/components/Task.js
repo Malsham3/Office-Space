@@ -33,7 +33,7 @@ function Task({ tasks }) {
         payload: data,
       })
     );
-    console.log(globalState.notes)
+    console.log(globalState.notes);
   }
 
   return (
@@ -45,7 +45,8 @@ function Task({ tasks }) {
             <Card.Header>
               <Accordion.Toggle
                 style={
-                  task.completed === true? completeStyle
+                  task.completed === true
+                    ? completeStyle
                     : { color: "black", fontSize: "20px" }
                 }
                 className="task-header"
@@ -56,7 +57,6 @@ function Task({ tasks }) {
               >
                 {task.title}
               </Accordion.Toggle>
-
               <Button
                 id="complete-task"
                 variant="info"
@@ -81,9 +81,11 @@ function Task({ tasks }) {
               eventKey="0"
             >
               <Card.Body>
-              <Card.Subtitle className="mb-2 text-muted mb-2">Date Created: {task.date}</Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted mb-2">
+                  Date Created: {task.date}
+                </Card.Subtitle>
                 {task.body}
-                </Card.Body>
+              </Card.Body>
             </Accordion.Collapse>
           </Card>
         </Accordion>

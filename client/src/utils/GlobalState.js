@@ -14,7 +14,9 @@ const reducer = (state, action) => {
     case "UPDATE_NOTES":
       return {
         ...state,
-        notes: [action.payload, ...state.notes],
+        notes: state.notes.filter((note) => {
+          return note._id !== action.payload._id;
+        }),
       };
 
     case "ADD_NOTE":
@@ -87,11 +89,11 @@ const reducer = (state, action) => {
         ...state,
         selectedDate: action.payload,
       };
-      case "SET_USER":
-        return {
-          ...state,
-          user: action.payload,
-        }
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.payload,
+      };
 
     default:
       return state;
