@@ -14,7 +14,7 @@ const reducer = (state, action) => {
     case "UPDATE_NOTES":
       return {
         ...state,
-        notes: state.notes.filter((note) => {
+        notes: state.notes.map((note) => {
           return note._id !== action.payload._id;
         }),
       };

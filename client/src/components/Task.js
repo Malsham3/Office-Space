@@ -45,7 +45,7 @@ function Task({ tasks }) {
             <Card.Header>
               <Accordion.Toggle
                 style={
-                  task.completed === true
+                  task.completed 
                     ? completeStyle
                     : { color: "black", fontSize: "20px" }
                 }

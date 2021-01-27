@@ -9,6 +9,7 @@ import MiniCalendar from "../components/MiniCalendar"
 import "../components/Style.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+
 function Home() {
   
 
