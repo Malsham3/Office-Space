@@ -1,19 +1,19 @@
 const Note = require("../models/note");
 
 module.exports = {
-  findAll: function (req, res) {
-    Note.find(req.query)
+  findAll: async function (req, res) {
+    await Note.find(req.query)
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  findById: function (req, res) {
-    Note.findById(req.params.id)
+  findById: async function (req, res) {
+    await Note.findById(req.params.id)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  create: function (req, res) {
-    Note.create(req.body)
+  create: async function (req, res) {
+    await Note.create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
@@ -22,8 +22,8 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  remove: function (req, res) {
-    Note.findById({ _id: req.params.id })
+  remove: async function (req, res) {
+    await Note.findById({ _id: req.params.id })
       .then((dbModel) => dbModel.remove())
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));

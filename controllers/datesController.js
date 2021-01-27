@@ -1,29 +1,34 @@
 const dates = require("../models/dates");
 
 module.exports = {
-  findAll: function (req, res) {
-    dates.find(req.query)
+  findAll: async function (req, res) {
+    await dates
+      .find(req.query)
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  findById: function (req, res) {
-    dates.findById(req.params.id)
+  findById: async function (req, res) {
+    await dates
+      .findById(req.params.id)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  create: function (req, res) {
-    dates.create(req.body)
+  create: async function (req, res) {
+    await dates
+      .create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  update: function (req, res) {
-    dates.findOneAndUpdate({ _id: req.params.id }, req.body)
+  update: async function (req, res) {
+    await dates
+      .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  remove: function (req, res) {
-    dates.findById({ _id: req.params.id })
+  remove: async function (req, res) {
+    await dates
+      .findById({ _id: req.params.id })
       .then((dbModel) => dbModel.remove())
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));

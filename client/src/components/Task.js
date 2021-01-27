@@ -18,13 +18,14 @@ function Task({ tasks }) {
   }
 
   function handleUpdateTask(id, notedata) {
-    API.updateNote(id, notedata).then(
-      ({ data }) =>
+    notedata.completed = !notedata.completed;
+    API.updateNote(id, notedata).then(({ data }) =>
       dispatch({
         type: "UPDATE_NOTES",
         payload: data,
       })
     );
+    console.log(globalState.notes);
   }
 
   return (
