@@ -19,21 +19,18 @@ function EditLead({ client }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  function handleUpdateLead(id) {
-    const newData = {
-      firstname: firstnameRef.current.value,
-      lastname: lastnameRef.current.value,
-      email: emailRef.current.value,
-      phone: phoneRef.current.value,
-      image: imageRef.current.value,
-    };
+  function handleUpdateLead(id, leadData) {
+    leadData.first = firstnameRef.current.value;
+    leadData.last = lastnameRef.current.value;
+    leadData.email = emailRef.current.value;
+    leadData.phone = phoneRef.current.value;
+    leadData.image = imageRef.current.value;
 
-    API.updateLead(id, newData).then(
-      ({ data }) => console.log(data)
-      // dispatch({
-      //   type: "UPDATE_LEAD",
-      //   payload: data,
-      // })
+    API.updateLead(id, leadData).then(({ data }) =>
+      dispatch({
+        type: "UPDATE_LEAD",
+        payload: data,
+      })
     );
     console.log(globalState.leads);
 
@@ -108,7 +105,7 @@ function EditLead({ client }) {
         <Modal.Footer>
           <Button
             onClick={(e) => {
-              handleUpdateLead(client._id);
+              handleUpdateLead(client._id, client);
             }}
             variant="info"
           >
