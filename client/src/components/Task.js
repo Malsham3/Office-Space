@@ -1,4 +1,5 @@
 import { Accordion, Card, Button } from "react-bootstrap";
+import Moment from 'react-moment';
 import "./Style.css";
 import React from "react";
 import API from "../utils/API";
@@ -77,8 +78,17 @@ function Task({ tasks }) {
               eventKey="0"
             >
               <Card.Body>
-                <Card.Subtitle className="mb-2 text-muted mb-2">
-                  Date Created: {task.date}
+                <Card.Subtitle className="text-muted mb-3">
+                Date Created: {" "}
+                  <Moment format="ddd MM/DD/YY">
+                  {task.date}
+                  </Moment>
+                  {" "}
+                  at 
+                  {" "}
+                  <Moment format="hh:mm a">
+                  {task.date}
+                  </Moment>
                 </Card.Subtitle>
                 {task.body}
               </Card.Body>

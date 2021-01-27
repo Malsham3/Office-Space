@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Form, Button, Modal } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
 import "./Style.css";
@@ -7,64 +7,86 @@ import "./Style.css";
 function NewActivity() {
   // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
-  const [show, setShow] = useState(false);
 
-  // const titleRef = useRef("");
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const activityRef = useRef();
+  const titleRef = useRef();
+
+  const handleNewActivity = (e) => {
+    e.preventDefault();
+    API.saveDate({
+      user: "Testing",
+      date: globalState.selectedDate,
+      title: titleRef.current.value,
+      activity: activityRef.current.value,
+      dateCreated: Date.now(),
+    })
+      .then((result) => {
+        dispatch({
+          type: "ADD_DATE",
+          payload: result.data,
+        });
+      })
+      .catch((err) => console.log(err));
+
+    activityRef.current.value = "";
+
+    handleClose();
+  };
+
   return (
     <>
-
-      {/* BUTTON TO DO WHAT? */}
       <Button
         style={{ fontWeight: "bold" }}
         className="new-task-button"
         variant="info"
         onClick={handleShow}
       >
-        Create new date
+        New Activity
       </Button>
 
-
-      {/* MODAL HEADER */}
-      <Modal className="task-modal" show={show} onHide={handleClose}>
+      <Modal className="activity-modal" show={show} onHide={handleClose}>
         <Modal.Header
-          style={{ fontWeight: "bold", color: "rgb(3, 73, 94)" }}
+          style={{
+            fontWeight: "bold",
+            color: "rgb(3, 73, 94)",
+            fontFamily: "Courier New, Courier, monospace",
+          }}
           closeButton
         >
-          Add a date
+          Add an Activity
         </Modal.Header>
 
-        <Form className="task-form">
+        <Form className="activity-form">
 
-          {/* USER DATE HERE */}
-          <Form.Group controlId="formGroupEmail">
+          <Form.Group controlId="formGroupTitle">
             <Form.Control
-              type="text"
+              type="text-box"
               placeholder="Title"
-              ref=""
+              ref={titleRef}
               required
             />
           </Form.Group>
-
-          {/* ACTIVITY FIELD HERE */}
-          <Form.Group
-            className="task-body"
-            controlId="exampleForm.ControlTextarea1"
-          >
-            <Form.Control
-              as="textarea"
-              rows={2}
-              placeholder="Body"
-              ref=""
-              required
+          
+          <Form.Group controlId="ControlTextarea1"
+          className = "activity-body">
+            <Form.Label>Activity</Form.Label>
+            <Form.Control as="textarea" rows={3} 
+            ref={activityRef}
+            required
             />
           </Form.Group>
         </Form>
+
         <Modal.Footer>
           <Button
+            onClick={(e) => {
+              handleNewActivity(e);
+            }}
             variant="info"
           >
             Save
