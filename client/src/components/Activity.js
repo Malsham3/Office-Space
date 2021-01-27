@@ -7,6 +7,15 @@ import { useStoreContext } from "../utils/GlobalState";
 function Activity({ dates }) {
   const [globalState, dispatch] = useStoreContext();
 
+  function handleRemoveDate(id) {
+    API.deleteDate(id).then(({ data }) =>
+      dispatch({
+        type: "REMOVE_DATE",
+        payload: data,
+      })
+    );
+  }
+
   return (
     // dynamically generate date row with a check box / button.
     <>
@@ -29,7 +38,13 @@ function Activity({ dates }) {
               <Button id="complete-date" variant="info">
                 Edit
               </Button>
-              <Button id="delete-date" variant="danger">
+              <Button
+                id="delete-task"
+                variant="danger"
+                onClick={() => {
+                  handleRemoveDate(date._id);
+                }}
+              >
                 X
               </Button>
             </Card.Header>
