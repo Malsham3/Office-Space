@@ -8,33 +8,34 @@ import { useStoreContext } from "./utils/GlobalState";
 
 function App() {
   const [globalState, dispatch] = useStoreContext();
-  const [localUser, setLocalUser] = useState()
+  const [localUser, setLocalUser] = useState();
 
   auth().onAuthStateChanged((user) => {
     if (user) {
-      setLocalUser(user.email)
-    }
+      setLocalUser(user.email);
+    } else setLocalUser("");
   });
+
   useEffect(() => {
     dispatch({
       type: "SET_USER",
       payload: localUser,
-    })
+    });
   }, [localUser]);
 
-  if (!globalState.user) {
-    return(
+  if (!localUser) {
+    return (
       <Switch>
         <Route exact path="/home" component={Signup} />
         <Route exact path="/signout" component={SignOut} />
       </Switch>
-    ) 
+    );
   } else {
     return (
-        <Switch>
-          <Route path="/home" component={Home} />
-          <Route exact path="/signout" component={SignOut} />
-        </Switch>
+      <Switch>
+        <Route path="/home" component={Home} />
+        <Route exact path="/signout" component={SignOut} />
+      </Switch>
     );
   }
 }
