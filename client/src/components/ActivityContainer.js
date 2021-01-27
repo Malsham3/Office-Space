@@ -13,11 +13,11 @@ function ActivityContainer() {
     let dates = globalState.dates;
   
     useEffect(() => {
-      API.getNotes()
+      API.getDates()
         .then(({ data }) =>
           dispatch(
             {
-              type: "LOAD_TASKS",
+              type: "LOAD_DATES",
               payload: data,
             },
             []
@@ -28,7 +28,7 @@ function ActivityContainer() {
   
     return (
       <div className="componentHolder ml-2">
-        <div style={{ width: "100%" }}>
+        <div style={{ width: "50%" }}>
           <NewActivity />
           <Accordion>
             <Activity dates={dates} />
