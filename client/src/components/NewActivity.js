@@ -49,7 +49,7 @@ function NewActivity() {
         New Activity
       </Button>
 
-      <Modal className="lead-modal" show={show} onHide={handleClose}>
+      <Modal className="activity-modal" show={show} onHide={handleClose}>
         <Modal.Header
           style={{
             fontWeight: "bold",
@@ -61,7 +61,8 @@ function NewActivity() {
           Add an Activity
         </Modal.Header>
 
-        <Form className="lead-form">
+        <Form className="activity-form">
+
           <Form.Group controlId="formGroupTitle">
             <Form.Control
               type="text-box"
@@ -70,7 +71,9 @@ function NewActivity() {
               required
             />
           </Form.Group>
-          <Form.Group controlId="ControlTextarea1">
+          
+          <Form.Group controlId="ControlTextarea1"
+          className = "activity-body">
             <Form.Label>Activity</Form.Label>
             <Form.Control as="textarea" rows={3} 
             ref={activityRef}

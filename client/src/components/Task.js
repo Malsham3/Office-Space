@@ -79,7 +79,7 @@ function Task({ tasks }) {
               eventKey="0"
             >
               <Card.Body>
-                <Card.Subtitle className="mb-2 text-muted mb-2">
+                <Card.Subtitle className="text-muted mb-3">
                 Date Created: {" "}
                   <Moment format="ddd MM/DD/YY">
                   {task.date}

@@ -1,8 +1,11 @@
 import React from "react";
 import { Accordion, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./Style.css";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
+import Moment from "react-moment";
+import EditActivity from "./EditActivity";
 
 function Activity({ dates }) {
   const [globalState, dispatch] = useStoreContext();
@@ -35,28 +38,31 @@ function Activity({ dates }) {
               </Accordion.Toggle>
 
               {/* EDIT AND DELETE BUTTONS HERE */}
-              <Button id="complete-date" variant="info">
-                Edit
-              </Button>
-              <Button
-                id="delete-task"
-                variant="danger"
-                onClick={() => {
-                  handleRemoveDate(date._id);
-                }}
-              >
-                X
-              </Button>
             </Card.Header>
             <Accordion.Collapse
               style={{ fontSize: "17px", color: "rgb(36, 35, 35)" }}
               eventKey="0"
             >
               <Card.Body>
-                <Card.Subtitle className="mb-2 text-muted mb-2">
-                  Date Created: {date.dateCreated}
+                <Card.Subtitle className="text-muted mb-4">
+                  Date Created:{" "}
+                  <Moment format="ddd MM/DD/YY">{date.dateCreated}</Moment> at{" "}
+                  <Moment format="hh:mm a">{date.dateCreated}</Moment>
                 </Card.Subtitle>
+                <Card.Text>
                 {date.activity}
+                </Card.Text>
+                <Link
+                  onClick={() => {
+                    handleRemoveDate(date._id);
+                  }}
+                  style={{ color: "red" }}
+                >
+                  Delete
+                </Link>{" "}
+                {" | "} 
+                {" "}
+                <EditActivity date={date} />
               </Card.Body>
             </Accordion.Collapse>
           </Card>

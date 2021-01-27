@@ -155,6 +155,7 @@ body {
   max-width: 195px;
   max-height: 400px;
 }
+
 .client-cards img {
   max-height: 200px;
   min-height: 200px;
@@ -232,4 +233,14 @@ body {
 .form-control {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
+}
+
+.activity-form{
+  width: 75%;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.activity-modal{
+  font-size: 25px;
 }
