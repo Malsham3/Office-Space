@@ -17,18 +17,13 @@ function Task({ tasks }) {
     );
   }
 
-  const [complete, setComplete] = useState(false);
+  // const [complete, setComplete] = useState(false);
 
   const completeStyle = {
     color: "black",
     fontSize: "20px",
     textDecoration: "red wavy line-through",
   };
-
-  function handleCompleteTask(e) {
-    e.preventDefault();
-    setComplete(!complete);
-  }
 
   function handleUpdateTask(id, notedata) {
     notedata.completed = !notedata.completed;
@@ -38,7 +33,7 @@ function Task({ tasks }) {
         payload: data,
       })
     );
-    console.log(globalState.notes);
+    console.log(globalState.notes)
   }
 
   return (
@@ -50,11 +45,9 @@ function Task({ tasks }) {
             <Card.Header>
               <Accordion.Toggle
                 style={
-                  complete === true
-                    ? completeStyle
+                  task.completed === true? completeStyle
                     : { color: "black", fontSize: "20px" }
                 }
-                style={{ color: "black", fontSize: "20px" }}
                 className="task-header"
                 id={task._id}
                 as={Button}
@@ -68,7 +61,7 @@ function Task({ tasks }) {
                 id="complete-task"
                 variant="info"
                 onClick={(e) => {
-                  handleCompleteTask(e);
+                  handleUpdateTask(task._id, task);
                 }}
               >
                 Complete ✓
