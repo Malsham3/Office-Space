@@ -1,6 +1,6 @@
 import { Accordion, Card, Button } from "react-bootstrap";
 import "./Style.css";
-import React, { useState, useRef } from "react";
+import React from "react";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 
@@ -16,8 +16,6 @@ function Task({ tasks }) {
       })
     );
   }
-
-  // const [complete, setComplete] = useState(false);
 
   const completeStyle = {
     color: "black",
@@ -45,8 +43,7 @@ function Task({ tasks }) {
             <Card.Header>
               <Accordion.Toggle
                 style={
-                  task.completed === true
-                    ? completeStyle
+                  task.completed? completeStyle
                     : { color: "black", fontSize: "20px" }
                 }
                 className="task-header"
