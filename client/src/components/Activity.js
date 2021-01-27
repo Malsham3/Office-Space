@@ -49,9 +49,7 @@ function Activity({ dates }) {
                   <Moment format="ddd MM/DD/YY">{date.dateCreated}</Moment> at{" "}
                   <Moment format="hh:mm a">{date.dateCreated}</Moment>
                 </Card.Subtitle>
-                <Card.Text>
-                {date.activity}
-                </Card.Text>
+                <Card.Text>{date.activity}</Card.Text>
                 <Link
                   onClick={() => {
                     handleRemoveDate(date._id);
@@ -60,9 +58,7 @@ function Activity({ dates }) {
                 >
                   Delete
                 </Link>{" "}
-                {" | "} 
-                {" "}
-                <EditActivity date={date} />
+                {" | "} <EditActivity date={date} />
               </Card.Body>
             </Accordion.Collapse>
           </Card>

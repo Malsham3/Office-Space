@@ -11,7 +11,6 @@ import ActivityContainer from "../components/ActivityContainer";
 
 
 function Home() {
-  
 
   return (
     <Router>
