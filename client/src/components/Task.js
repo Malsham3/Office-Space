@@ -25,6 +25,7 @@ function Task({ tasks }) {
   };
 
   function handleUpdateTask(id, notedata) {
+    notedata.completed = !notedata.completed
     API.updateNote(id, notedata).then(({ data }) =>
       dispatch({
         type: "UPDATE_NOTES",
