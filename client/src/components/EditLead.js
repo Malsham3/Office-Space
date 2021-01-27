@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useStoreContext } from "../utils/GlobalState";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import API from "../utils/API";
 import "./Style.css";
 
-function EditLead({client}) {
+function EditLead({ client }) {
   // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
   const [show, setShow] = useState(false);
@@ -19,18 +19,21 @@ function EditLead({client}) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  function handleUpdateLead(id, leadData) {
-    leadData.first = firstnameRef.value;
-    leadData.last = lastnameRef.value;
-    leadData.email = emailRef.value;
-    leadData.phone = emailRef.value;
-    leadData.image = imageRef.value;
+  function handleUpdateLead(id) {
+    const newData = {
+      firstname: firstnameRef.current.value,
+      lastname: lastnameRef.current.value,
+      email: emailRef.current.value,
+      phone: phoneRef.current.value,
+      image: imageRef.current.value,
+    };
 
-    API.updateLead(id, leadData).then(({ data }) =>
-      dispatch({
-        type: "UPDATE_LEAD",
-        payload: data,
-      })
+    API.updateLead(id, newData).then(
+      ({ data }) => console.log(data)
+      // dispatch({
+      //   type: "UPDATE_LEAD",
+      //   payload: data,
+      // })
     );
     console.log(globalState.leads);
 
@@ -39,10 +42,7 @@ function EditLead({client}) {
 
   return (
     <>
-      <Link
-        onClick={handleShow}
-        style={{ color: "navy" }}
-      >
+      <Link onClick={handleShow} style={{ color: "navy" }}>
         Edit Info
       </Link>
 
@@ -108,7 +108,7 @@ function EditLead({client}) {
         <Modal.Footer>
           <Button
             onClick={(e) => {
-              handleUpdateLead(client._id, client);
+              handleUpdateLead(client._id);
             }}
             variant="info"
           >
