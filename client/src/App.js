@@ -25,7 +25,7 @@ function App() {
   if (!globalState.user) {
     return(
       <Switch>
-        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/home" component={Signup} />
         <Route exact path="/signout" component={SignOut} />
       </Switch>
     ) 

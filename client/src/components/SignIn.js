@@ -54,9 +54,7 @@ function SignIn() {
     });
   }
 
-  if (isSignedIn){
-    return <Redirect to="/home" />;
-  } else if (!signUp) {
+  if (!signUp) {
     return (
       <Container className="login-container">
         <Card
