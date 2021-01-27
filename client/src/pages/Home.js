@@ -15,7 +15,6 @@ function Home() {
   return (
     <Router>
       <StoreProvider>
-        
           <div id="wrapper">
             <Header title="Office Space" tag="I'll burn the building down" />
             <div className="main-display-row">
