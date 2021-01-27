@@ -1,6 +1,6 @@
 import { Accordion, Card, Button } from "react-bootstrap";
 import "./Style.css";
-import React, { useState, useRef } from "react";
+import React from "react";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 
