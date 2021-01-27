@@ -25,7 +25,7 @@ function MiniCalendar() {
     <div className="componentHolder ml-2">
       <div style={{ width: "100%" }}>
         <Calendar onChange={onChange} value={date} />
-        <p>{date}</p>
+        <p>{date.toDateString()}</p>
       </div>
     </div>
   );

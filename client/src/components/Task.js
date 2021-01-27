@@ -52,7 +52,6 @@ function Task({ tasks }) {
                 handleUpdateTask(task._id, task);
               }}
               >
-
                 {" "}
                 Complete ✓
               </Button>
