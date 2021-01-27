@@ -22,7 +22,7 @@ function NewLead() {
   const handleNewLead = (e) => {
     e.preventDefault();
     API.saveLead({
-      // name: nameRef.current.value,
+      user: globalState.user,
       first: firstnameRef.current.value,
       last: lastnameRef.current.value,
       email: emailRef.current.value,
