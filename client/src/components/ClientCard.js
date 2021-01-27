@@ -35,6 +35,8 @@ function ClientCard({ client }) {
     <>
       <div className="row">
         <ul className="col-10" style={{ maxHeight: "50%", listStyle: "none" }}>
+          <li>Full name: {client.first} {client.last}</li>
+          <br />
           <li>Email: 
             {" "}
             <a href={"mailto:" + client.email}>{client.email}</a>
