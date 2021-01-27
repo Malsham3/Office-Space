@@ -10,10 +10,6 @@ import EditActivity from "./EditActivity";
 function Activity({ dates }) {
   const [globalState, dispatch] = useStoreContext();
 
-<<<<<<< HEAD
-  return (
-    // dynamically generate task row with a check box / button.
-=======
   function handleRemoveDate(id) {
     API.deleteDate(id).then(({ data }) =>
       dispatch({
@@ -25,7 +21,6 @@ function Activity({ dates }) {
 
   return (
     // dynamically generate date row with a check box / button.
->>>>>>> 492b9966f03d64617a50c19f902acbc3bbf73139
     <>
       {dates.map((date) => (
         <Accordion key={date._id}>
@@ -43,15 +38,6 @@ function Activity({ dates }) {
               </Accordion.Toggle>
 
               {/* EDIT AND DELETE BUTTONS HERE */}
-<<<<<<< HEAD
-              <Button id="complete-task" variant="info">
-                Edit
-              </Button>
-              <Button id="delete-task" variant="danger">
-                X
-              </Button>
-=======
->>>>>>> 492b9966f03d64617a50c19f902acbc3bbf73139
             </Card.Header>
             <Accordion.Collapse
               style={{ fontSize: "17px", color: "rgb(3, 73, 94)" }}
