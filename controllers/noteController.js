@@ -17,8 +17,8 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  update: function (req, res) {
-    Note.findOneAndUpdate({ _id: req.params.id }, req.body)
+  update: async function (req, res) {
+    await Note.findOneAndUpdate({ _id: req.params.id }, req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },

@@ -14,7 +14,7 @@ const reducer = (state, action) => {
     case "UPDATE_NOTES":
       return {
         ...state,
-        notes: [...action.notes],
+        notes: [action.payload, ...state.notes],
       };
 
     case "ADD_NOTE":
