@@ -24,7 +24,7 @@ function SignOut() {
   }, []);
 
   if (succesful) {
-    return <Redirect to="/signup" />;
+    return <Redirect to="/home" />;
   } else {
     return <h1>"Signing you out.."</h1>;
   }
