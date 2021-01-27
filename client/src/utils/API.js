@@ -17,6 +17,10 @@ export default {
   saveNote: function (noteData) {
     return axios.post("/api/note", noteData);
   },
+  // Updates a note to the database with the given up
+  updateNote: function(id, noteData){
+    return axios.put("/api/note/" + id, noteData)
+  },
 
   // Gets all leads
   getLeads: function () {
