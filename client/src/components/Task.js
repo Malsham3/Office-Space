@@ -20,6 +20,7 @@ function Task({ tasks }) {
   }
 
   const [complete, setComplete] = useState(false);
+
   const completeStyle = {
     color: "black",
     fontSize: "20px", 
@@ -79,7 +80,10 @@ function Task({ tasks }) {
               style={{ fontSize: "17px", color: "rgb(36, 35, 35)" }}
               eventKey="0"
             >
-              <Card.Body>{task.body}</Card.Body>
+              <Card.Body>
+              <Card.Subtitle className="mb-2 text-muted mb-1">Date Created: {task.date}</Card.Subtitle>
+                {task.body}
+                </Card.Body>
             </Accordion.Collapse>
           </Card>
         </Accordion>
