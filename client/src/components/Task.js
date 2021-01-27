@@ -20,13 +20,14 @@ function Task({ tasks }) {
 <<<<<<< HEAD
 =======
   function handleUpdateTask(id, notedata) {
-    API.updateNote(id, notedata).then(
-      ({ data }) =>
+    notedata.completed = !notedata.completed;
+    API.updateNote(id, notedata).then(({ data }) =>
       dispatch({
         type: "UPDATE_NOTES",
         payload: data,
       })
     );
+    console.log(globalState.notes);
   }
 
 >>>>>>> 049386bfc0b2aea0ab4313cc2e39d5a33c3b6e77
