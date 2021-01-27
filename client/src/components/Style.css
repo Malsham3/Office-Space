@@ -234,3 +234,13 @@ body {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
 }
+
+.activity-form{
+  width: 75%;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.activity-modal{
+  font-size: 25px;
+}
