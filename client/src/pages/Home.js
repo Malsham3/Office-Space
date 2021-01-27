@@ -16,7 +16,7 @@ function Home() {
   return (
     <Router>
       <StoreProvider>
-        <Switch>
+        
           <div id="wrapper">
             <Header title="Office Space" tag="I'll burn the building down" />
             <div className="main-display-row">
@@ -27,7 +27,6 @@ function Home() {
             </div>
             <Footer />
           </div>
-        </Switch>
       </StoreProvider>
     </Router>
   );
