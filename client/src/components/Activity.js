@@ -1,14 +1,13 @@
-import React from 'react'
+import React from "react";
 import { Accordion, Card, Button } from "react-bootstrap";
 import "./Style.css";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 
-function Activity({dates}) {
+function Activity({ dates }) {
+  const [globalState, dispatch] = useStoreContext();
 
-    const [globalState, dispatch] = useStoreContext();
-
-    return (
+  return (
     // dynamically generate task row with a check box / button.
     <>
       {dates.map((date) => (
@@ -27,21 +26,15 @@ function Activity({dates}) {
               </Accordion.Toggle>
 
               {/* EDIT AND DELETE BUTTONS HERE */}
-              <Button
-                id="complete-task"
-                variant="info"
-              >
+              <Button id="complete-task" variant="info">
                 Edit
               </Button>
-              <Button
-                id="delete-task"
-                variant="danger"
-              >
+              <Button id="delete-task" variant="danger">
                 X
               </Button>
             </Card.Header>
             <Accordion.Collapse
-              style={{ fontSize: "17px", color: "rgb(36, 35, 35)" }}
+              style={{ fontSize: "17px", color: "rgb(3, 73, 94)" }}
               eventKey="0"
             >
               <Card.Body>
@@ -58,4 +51,4 @@ function Activity({dates}) {
   );
 }
 
-export default Activity
+export default Activity;

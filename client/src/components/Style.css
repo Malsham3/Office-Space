@@ -154,10 +154,12 @@ body {
 .client-cards {
   max-width: 195px;
   max-height: 400px;
+  font-family: "Courier New", Courier, monospace;
 }
 .client-cards img {
   max-height: 200px;
   min-height: 200px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .button-group {
@@ -178,6 +180,7 @@ body {
   font-size: 18px;
   font-weight: bold;
   color: white;
+  font-family: "Courier New", Courier, monospace;
 }
 
 /* Accordion styling */
@@ -195,6 +198,7 @@ body {
 
 .task-form {
   margin-top: 10px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 #complete-task {
@@ -203,11 +207,14 @@ body {
   margin-top: 3px;
   margin-right: 47px;
   font-family: "Courier New", Courier, monospace;
+  background-color: rgb(3, 73, 94);
+  /* background: url(./images/redstapler.JPG) no-repeat center center fixed; */
 }
 
 #formGroupEmail {
   width: 50%;
   margin-left: 10px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 #delete-task {
@@ -221,6 +228,7 @@ body {
 .task-body {
   margin-left: 10px;
   margin-right: 10px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .new-task-button {
