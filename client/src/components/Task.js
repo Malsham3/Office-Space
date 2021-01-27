@@ -17,8 +17,6 @@ function Task({ tasks }) {
     );
   }
 
-  // const [complete, setComplete] = useState(false);
-
   const completeStyle = {
     color: "black",
     fontSize: "20px",
@@ -45,8 +43,7 @@ function Task({ tasks }) {
             <Card.Header>
               <Accordion.Toggle
                 style={
-                  task.completed 
-                    ? completeStyle
+                  task.completed? completeStyle
                     : { color: "black", fontSize: "20px" }
                 }
                 className="task-header"
