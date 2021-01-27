@@ -3,9 +3,9 @@ import "./Style.css";
 import React from "react";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
-import ClientCard from "./ClientCard"
+import ClientCard from "./ClientCard";
 
-function Client({clients}) {
+function Client({ clients }) {
   const [globalState, dispatch] = useStoreContext();
 
   function handleRemoveClient(id) {
@@ -17,7 +17,6 @@ function Client({clients}) {
     );
   }
 
-
   return (
     // dynamically generate client row with a check box / button.
     <>
@@ -26,8 +25,7 @@ function Client({clients}) {
           <Card>
             <Card.Header>
               <Accordion.Toggle
-                style = {{"color": "black",
-              "fontSize": "20px"}}
+                style={{ color: "black", fontSize: "20px" }}
                 className="client-header"
                 id={client._id}
                 as={Button}
@@ -37,10 +35,13 @@ function Client({clients}) {
                 {client.first} {client.last}
               </Accordion.Toggle>
             </Card.Header>
-            <Accordion.Collapse style={{"fontSize": "17px", "color": "rgb(36, 35, 35)"}} eventKey="0">
+            <Accordion.Collapse
+              style={{ fontSize: "17px", color: " rgb(3, 73, 94)" }}
+              eventKey="0"
+            >
               <Card.Body>
-                  <ClientCard client = {client} />
-                </Card.Body>
+                <ClientCard client={client} />
+              </Card.Body>
             </Accordion.Collapse>
           </Card>
         </Accordion>

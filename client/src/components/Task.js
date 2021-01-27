@@ -17,6 +17,8 @@ function Task({ tasks }) {
     );
   }
 
+<<<<<<< HEAD
+=======
   function handleUpdateTask(id, notedata) {
     notedata.completed = !notedata.completed;
     API.updateNote(id, notedata).then(({ data }) =>
@@ -28,6 +30,7 @@ function Task({ tasks }) {
     console.log(globalState.notes);
   }
 
+>>>>>>> 049386bfc0b2aea0ab4313cc2e39d5a33c3b6e77
   return (
     // dynamically generate task row with a check box / button.
     <>
@@ -58,6 +61,11 @@ function Task({ tasks }) {
               >
                 X
               </Button>
+<<<<<<< HEAD
+            </Card.Header>
+            <Accordion.Collapse
+              style={{ fontSize: "17px", color: "  rgb(3, 73, 94)" }}
+=======
               <Button
                 id="delete-task"
                 variant="danger"
@@ -70,6 +78,7 @@ function Task({ tasks }) {
             </Card.Header>
             <Accordion.Collapse
               style={{ fontSize: "17px", color: "rgb(36, 35, 35)" }}
+>>>>>>> 049386bfc0b2aea0ab4313cc2e39d5a33c3b6e77
               eventKey="0"
             >
               <Card.Body>{task.body}</Card.Body>
