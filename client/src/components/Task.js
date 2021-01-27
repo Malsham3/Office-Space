@@ -1,6 +1,6 @@
 import { Accordion, Card, Button } from "react-bootstrap";
 import "./Style.css";
-import React from "react";
+import React, { useState, useRef } from "react";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 
@@ -16,6 +16,14 @@ function Task({ tasks }) {
       })
     );
   }
+
+  // const [complete, setComplete] = useState(false);
+
+  const completeStyle = {
+    color: "black",
+    fontSize: "20px",
+    textDecoration: "red wavy line-through",
+  };
 
   function handleUpdateTask(id, notedata) {
     notedata.completed = !notedata.completed;
@@ -36,7 +44,11 @@ function Task({ tasks }) {
           <Card>
             <Card.Header>
               <Accordion.Toggle
-                style={{ color: "black", fontSize: "20px" }}
+                style={
+                  task.completed === true
+                    ? completeStyle
+                    : { color: "black", fontSize: "20px" }
+                }
                 className="task-header"
                 id={task._id}
                 as={Button}
@@ -45,14 +57,13 @@ function Task({ tasks }) {
               >
                 {task.title}
               </Accordion.Toggle>
-              <Button 
-              id="complete-task" 
-              variant="info"
-              onClick={() => {
-                handleUpdateTask(task._id, task);
-              }}
+              <Button
+                id="complete-task"
+                variant="info"
+                onClick={(e) => {
+                  handleUpdateTask(task._id, task);
+                }}
               >
-                {" "}
                 Complete ✓
               </Button>
               <Button
@@ -69,7 +80,12 @@ function Task({ tasks }) {
               style={{ fontSize: "17px", color: "rgb(36, 35, 35)" }}
               eventKey="0"
             >
-              <Card.Body>{task.body}</Card.Body>
+              <Card.Body>
+                <Card.Subtitle className="mb-2 text-muted mb-2">
+                  Date Created: {task.date}
+                </Card.Subtitle>
+                {task.body}
+              </Card.Body>
             </Accordion.Collapse>
           </Card>
         </Accordion>
