@@ -19,14 +19,14 @@ function EditLead({client}) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  function handleUpdateLead(id, leaddata) {
-    leaddata.first = firstnameRef.value;
-    leaddata.last = lastnameRef.value;
-    leaddata.email = emailRef.value;
-    leaddata.phone = emailRef.value;
-    leaddata.image = imageRef.value;
+  function handleUpdateLead(id, leadData) {
+    leadData.first = firstnameRef.value;
+    leadData.last = lastnameRef.value;
+    leadData.email = emailRef.value;
+    leadData.phone = emailRef.value;
+    leadData.image = imageRef.value;
 
-    API.updateNote(id, leaddata).then(({ data }) =>
+    API.updateLead(id, leadData).then(({ data }) =>
       dispatch({
         type: "UPDATE_LEAD",
         payload: data,

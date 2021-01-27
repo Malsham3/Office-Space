@@ -73,7 +73,9 @@ const reducer = (state, action) => {
     case "UPDATE_DATE":
       return {
         ...state,
-        dates: [...state.dates],
+        leads: state.leads.map((lead) => {
+          return lead._id !== action.payload._id;
+        }),
       };
 
     case "REMOVE_DATE":

@@ -38,4 +38,8 @@ export default {
   saveLead: function (leadData) {
     return axios.post("/api/leads", leadData);
   },
+
+  updateLead: function(id, leadData){
+    return axios.put("/api/leads/" + id, leadData)
+  }
 };
