@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Card, ListGroup, ListGroupItem, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Style.css";
 import { useStoreContext } from "../utils/GlobalState";

@@ -1,73 +1,41 @@
+import React from 'react'
 import { Accordion, Card, Button } from "react-bootstrap";
 import "./Style.css";
-import React from "react";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 
-function Task({ tasks }) {
-  // eslint-disable-next-line
-  const [globalState, dispatch] = useStoreContext();
+function Activity({dates}) {
 
-  function handleRemoveTask(id) {
-    API.deleteNote(id).then(({ data }) =>
-      dispatch({
-        type: "REMOVE_NOTE",
-        payload: data,
-      })
-    );
-  }
+    const [globalState, dispatch] = useStoreContext();
 
-  const completeStyle = {
-    color: "black",
-    fontSize: "20px",
-    textDecoration: "red wavy line-through",
-  };
-
-  function handleUpdateTask(id, notedata) {
-    API.updateNote(id, notedata).then(({ data }) =>
-      dispatch({
-        type: "UPDATE_NOTES",
-        payload: data,
-      })
-    );
-  }
-
-  return (
+    return (
     // dynamically generate task row with a check box / button.
     <>
-      {tasks.map((task) => (
+      {dates.map((date) => (
         <Accordion key={task._id}>
           <Card>
             <Card.Header>
               <Accordion.Toggle
-                style={
-                  task.completed
-                    ? completeStyle
-                    : { color: "black", fontSize: "20px" }
-                }
+                style={{ color: "black", fontSize: "20px" }}
                 className="task-header"
-                id={task._id}
+                id={date._id}
                 as={Button}
                 variant="link"
                 eventKey="0"
               >
-                {task.title}
+                HEADER/TITLE
               </Accordion.Toggle>
+
+              {/* EDIT AND DELETE BUTTONS HERE */}
               <Button
                 id="complete-task"
                 variant="info"
-                onClick={(e) => {
-                  handleUpdateTask(task._id, task);
-                }}
               >
-                Complete ✓
+                Edit
               </Button>
               <Button
                 id="delete-task"
                 variant="danger"
-                onClick={() => {
-                  handleRemoveTask(task._id);
-                }}
               >
                 X
               </Button>
@@ -78,9 +46,9 @@ function Task({ tasks }) {
             >
               <Card.Body>
                 <Card.Subtitle className="mb-2 text-muted mb-2">
-                  Date Created: {task.date}
+                  SUBTITLES
                 </Card.Subtitle>
-                {task.body}
+                CONTENT
               </Card.Body>
             </Accordion.Collapse>
           </Card>
@@ -90,4 +58,4 @@ function Task({ tasks }) {
   );
 }
 
-export default Task;
+export default Activity

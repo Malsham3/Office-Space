@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect,
 } from "react-router-dom";
 import Home from "./pages/Home";
 import SignOut from "./components/SignOut";
@@ -15,7 +14,6 @@ function App() {
       <Router>
         <StoreProvider>
           <Switch>
-            {/* <Redirect to="/home" />; */}
             <Route path="/home" component={Home} />
             <Route exact path="/signout" component={SignOut} />
           </Switch>

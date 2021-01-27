@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import {Accordion} from 'react-bootstrap'
-import ClientCard from "./ClientCard"
 import NewLead from "./NewLead"
 import Client from "./Client"
 import "./Style.css";
