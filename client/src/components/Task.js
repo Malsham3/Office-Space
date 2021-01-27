@@ -25,14 +25,12 @@ function Task({ tasks }) {
   };
 
   function handleUpdateTask(id, notedata) {
-    notedata.completed = !notedata.completed;
     API.updateNote(id, notedata).then(({ data }) =>
       dispatch({
         type: "UPDATE_NOTES",
         payload: data,
       })
     );
-    console.log(globalState.notes);
   }
 
   return (
@@ -44,7 +42,8 @@ function Task({ tasks }) {
             <Card.Header>
               <Accordion.Toggle
                 style={
-                  task.completed? completeStyle
+                  task.completed
+                    ? completeStyle
                     : { color: "black", fontSize: "20px" }
                 }
                 className="task-header"
@@ -79,7 +78,7 @@ function Task({ tasks }) {
               eventKey="0"
             >
               <Card.Body>
-                <Card.Subtitle className="mb-2 text-muted mb-2">
+                <Card.Subtitle className="text-muted mb-3">
                 Date Created: {" "}
                   <Moment format="ddd MM/DD/YY">
                   {task.date}
