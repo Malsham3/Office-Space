@@ -1,17 +1,14 @@
 import React, { useRef, useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
+import { Form, Button, Modal } from "react-bootstrap";
 import { useStoreContext } from "../utils/GlobalState";
+import {Link} from "react-router-dom";
 import API from "../utils/API";
 import "./Style.css";
 
-function NewLead() {
+function EditLead({client}) {
   // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
-
   const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const firstnameRef = useRef();
   const lastnameRef = useRef();
@@ -19,43 +16,35 @@ function NewLead() {
   const phoneRef = useRef();
   const imageRef = useRef();
 
-  const handleNewLead = (e) => {
-    e.preventDefault();
-    API.saveLead({
-      // name: nameRef.current.value,
-      first: firstnameRef.current.value,
-      last: lastnameRef.current.value,
-      email: emailRef.current.value,
-      phone: phoneRef.current.value,
-      image: imageRef.current.value,
-    })
-      .then((result) => {
-        dispatch({
-          type: "ADD_LEAD",
-          payload: result.data,
-        });
-      })
-      .catch((err) => console.log(err));
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-    firstnameRef.current.value = "";
-    lastnameRef.current.value = "";
-    emailRef.current.value = "";
-    phoneRef.current.value = "";
-    imageRef.current.value = "";
+  function handleUpdateLead(id, leadData) {
+    leadData.first = firstnameRef.value;
+    leadData.last = lastnameRef.value;
+    leadData.email = emailRef.value;
+    leadData.phone = emailRef.value;
+    leadData.image = imageRef.value;
+
+    API.updateLead(id, leadData).then(({ data }) =>
+      dispatch({
+        type: "UPDATE_LEAD",
+        payload: data,
+      })
+    );
+    console.log(globalState.leads);
 
     handleClose();
-  };
+  }
 
   return (
     <>
-      <Button
-        style={{ fontWeight: "bold" }}
-        className="new-task-button"
-        variant="info"
+      <Link
         onClick={handleShow}
+        style={{ color: "navy" }}
       >
-        New Lead
-      </Button>
+        Edit Info
+      </Link>
 
       <Modal className="lead-modal" show={show} onHide={handleClose}>
         <Modal.Header
@@ -66,14 +55,14 @@ function NewLead() {
           }}
           closeButton
         >
-          Add a Lead
+          Edit {client.first}'s Information
         </Modal.Header>
 
         <Form className="lead-form">
           <Form.Group controlId="formGroupEmail">
             <Form.Control
               type="text"
-              placeholder="First Name"
+              placeholder={client.first}
               ref={firstnameRef}
               required
             />
@@ -82,7 +71,7 @@ function NewLead() {
           <Form.Group controlId="formGroupEmail">
             <Form.Control
               type="text"
-              placeholder="Last Name"
+              placeholder={client.last}
               ref={lastnameRef}
               required
             />
@@ -91,7 +80,7 @@ function NewLead() {
           <Form.Group controlId="formGroupEmail">
             <Form.Control
               type="email"
-              placeholder="Email address"
+              placeholder={client.email}
               ref={emailRef}
               required
             />
@@ -100,7 +89,7 @@ function NewLead() {
           <Form.Group controlId="formGroupEmail">
             <Form.Control
               type="text"
-              placeholder="Phone number"
+              placeholder={client.phone}
               ref={phoneRef}
               required
             />
@@ -109,7 +98,7 @@ function NewLead() {
           <Form.Group controlId="formGroupEmail">
             <Form.Control
               type="text"
-              placeholder="Image URL"
+              placeholder="Enter new image URL"
               ref={imageRef}
               required
             />
@@ -119,7 +108,7 @@ function NewLead() {
         <Modal.Footer>
           <Button
             onClick={(e) => {
-              handleNewLead(e);
+              handleUpdateLead(client._id, client);
             }}
             variant="info"
           >
@@ -131,4 +120,4 @@ function NewLead() {
   );
 }
 
-export default NewLead;
+export default EditLead;

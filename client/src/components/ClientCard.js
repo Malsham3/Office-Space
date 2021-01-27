@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Style.css";
 import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
+import EditLead from "./EditLead"
 
 function ClientCard({ client }) {
   const [globalState, dispatch] = useStoreContext();
@@ -52,6 +53,10 @@ function ClientCard({ client }) {
       >
         Remove Client
       </Link>
+      {" "}
+      {" | "}
+      {" "}
+      <EditLead client= {client}/>
     </>
   );
 }
