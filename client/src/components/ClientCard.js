@@ -44,7 +44,7 @@ function ClientCard({ client }) {
         </ul>
 
         <div className="col-2" style={{ maxHeight: "50%" }}>
-          <Image className = "profile-pic" src="http://placekitten.com/200/300" thumbnail />
+          <Image className = "profile-pic" src={client.image? client.image : null} thumbnail />
         </div>
       </div>
 
