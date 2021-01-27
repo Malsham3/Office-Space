@@ -20,11 +20,11 @@ function EditLead({client}) {
   const handleShow = () => setShow(true);
 
   function handleUpdateLead(id, leadData) {
-    leadData.first = firstnameRef.value;
-    leadData.last = lastnameRef.value;
-    leadData.email = emailRef.value;
-    leadData.phone = emailRef.value;
-    leadData.image = imageRef.value;
+    leadData.first = firstnameRef.current.value;
+    leadData.last = lastnameRef.current.value;
+    leadData.email = emailRef.current.value;
+    leadData.phone = phoneRef.current.value;
+    leadData.image = imageRef.current.value;
 
     API.updateLead(id, leadData).then(({ data }) =>
       dispatch({
