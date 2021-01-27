@@ -1,6 +1,6 @@
 import { Accordion, Card, Button } from "react-bootstrap";
 import "./Style.css";
-import React from "react";
+import React, { useState, useRef } from "react";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 
@@ -8,6 +8,7 @@ function Task({ tasks }) {
   // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
 
+  const completedRef = useRef();
 
   function handleRemoveTask(id) {
     API.deleteNote(id).then(({ data }) =>
@@ -17,7 +18,26 @@ function Task({ tasks }) {
       })
     );
   }
-  
+
+  const [complete, setComplete] = useState(false);
+  const completeStyle = {
+    color: "black",
+    fontSize: "20px", 
+    textDecoration: "red wavy line-through"
+  }
+
+  function handleCompleteTask(e) {
+    e.preventDefault();
+    setComplete(!complete);
+  }
+
+  // API.getNote(id).then(({ data }) =>
+  //     dispatch({
+  //       type: "UPDATE_NOTES",
+  //       payload: data,
+  //     })
+  //   );
+
   return (
     // dynamically generate task row with a check box / button.
     <>
@@ -26,8 +46,8 @@ function Task({ tasks }) {
           <Card>
             <Card.Header>
               <Accordion.Toggle
-                style = {{"color": "black",
-              "fontSize": "20px"}}
+                style={complete === true? 
+                completeStyle : { color: "black", fontSize: "20px"}}
                 className="task-header"
                 id={task._id}
                 as={Button}
@@ -36,10 +56,29 @@ function Task({ tasks }) {
               >
                 {task.title}
               </Accordion.Toggle>
-              <Button id="complete-task" variant="info"> Complete ✓</Button>
-              <Button id="delete-task" variant="danger" onClick={()=> {handleRemoveTask(task._id)} }>X</Button>
+
+              <Button id="complete-task" variant="info"
+              onClick={(e) => {
+                handleCompleteTask(e);
+              }}
+              >
+                Complete ✓
+              </Button>
+              <Button
+                id="delete-task"
+                variant="danger"
+                onClick={() => {
+                  handleRemoveTask(task._id);
+                }}
+              >
+                X
+              </Button>
+              
             </Card.Header>
-            <Accordion.Collapse style={{"fontSize": "17px", "color": "rgb(36, 35, 35)"}} eventKey="0">
+            <Accordion.Collapse
+              style={{ fontSize: "17px", color: "rgb(36, 35, 35)" }}
+              eventKey="0"
+            >
               <Card.Body>{task.body}</Card.Body>
             </Accordion.Collapse>
           </Card>
