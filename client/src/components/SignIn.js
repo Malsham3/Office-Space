@@ -5,7 +5,6 @@ import { Redirect } from "react-router-dom";
 import "./Style.css";
 
 function SignIn() {
-  
   let [credentials, SetCredentials] = useState({
     email: "",
     password: "",
@@ -91,15 +90,16 @@ function SignIn() {
                 onChange={handleInputChange}
               />
             </Form.Group>
-            <Button 
-            style= {{backgroundColor:"rgb(64, 90, 204)"}}
-            type="submit" onClick={handleSignIn}>
+            <Button
+              style={{ backgroundColor: "rgb(3, 73, 94)" }}
+              type="submit"
+              onClick={handleSignIn}
+            >
               Log In
             </Button>
 
             <Button
-              style={{ float: "right", backgroundColor:"rgb(64, 90, 204)" }}
-              
+              style={{ float: "right", backgroundColor: "rgb(3, 73, 94)" }}
               type="submit"
               onClick={() => {
                 setSignUp(true);
@@ -149,24 +149,27 @@ function SignIn() {
               </Form.Group>
             </Form.Row>
             <Form.Row>
-            <Button 
-            className= "create-button"
-            style={{backgroundColor:"rgb(64, 90, 204)"}} type="submit" onClick={handleSignUp}>
-              Create account
-            </Button>
+              <Button
+                className="create-button"
+                style={{ backgroundColor: "rgb(3, 73, 94)" }}
+                type="submit"
+                onClick={handleSignUp}
+              >
+                Create account
+              </Button>
             </Form.Row>
 
             <Form.Row>
-            <Button
-              className= "signup-buttons"
-              style={{ float: "right", backgroundColor:"rgb(64, 90, 204)" }}
-              type="submit"
-              onClick={() => {
-                setSignUp(false);
-              }}
-            >
-              Already Have an Account?
-            </Button>
+              <Button
+                className="signup-buttons"
+                style={{ float: "right", backgroundColor: "rgb(3, 73, 94)" }}
+                type="submit"
+                onClick={() => {
+                  setSignUp(false);
+                }}
+              >
+                Already Have an Account?
+              </Button>
             </Form.Row>
           </Form>
         </Card>

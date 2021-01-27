@@ -7,7 +7,7 @@ import { useStoreContext, StoreProvider } from "../utils/GlobalState";
 // import ClientCard from "../components/ClientCard";
 // import NewLead from "../components/NewLead";
 import LeadsContainer from "../components/LeadsContainer";
-import MyCalendar from "../components/MyCalendar";
+import MiniCalendar from "../components/MiniCalendar"
 import "../components/Style.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -56,7 +56,7 @@ function Home() {
               <UserProfile />
               <Route path="/home/taskscomponents" component={TasksContainer} />
               <Route path="/home/leadcomponents" component={LeadsContainer} />
-              <Route path="/home/calendarcomponents" component={MyCalendar} />
+              <Route path="/home/calendarcomponents" component={MiniCalendar} />
             </div>
             <Footer />
           </div>

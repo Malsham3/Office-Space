@@ -8,8 +8,6 @@ function Task({ tasks }) {
   // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
 
-  const completedRef = useRef();
-
   function handleRemoveTask(id) {
     API.deleteNote(id).then(({ data }) =>
       dispatch({
@@ -23,21 +21,25 @@ function Task({ tasks }) {
 
   const completeStyle = {
     color: "black",
-    fontSize: "20px", 
-    textDecoration: "red wavy line-through"
-  }
+    fontSize: "20px",
+    textDecoration: "red wavy line-through",
+  };
 
   function handleCompleteTask(e) {
     e.preventDefault();
     setComplete(!complete);
   }
 
-  // API.getNote(id).then(({ data }) =>
-  //     dispatch({
-  //       type: "UPDATE_NOTES",
-  //       payload: data,
-  //     })
-  //   );
+  function handleUpdateTask(id, notedata) {
+    notedata.completed = !notedata.completed;
+    API.updateNote(id, notedata).then(({ data }) =>
+      dispatch({
+        type: "UPDATE_NOTES",
+        payload: data,
+      })
+    );
+    console.log(globalState.notes);
+  }
 
   return (
     // dynamically generate task row with a check box / button.
@@ -47,8 +49,12 @@ function Task({ tasks }) {
           <Card>
             <Card.Header>
               <Accordion.Toggle
-                style={complete === true? 
-                completeStyle : { color: "black", fontSize: "20px"}}
+                style={
+                  complete === true
+                    ? completeStyle
+                    : { color: "black", fontSize: "20px" }
+                }
+                style={{ color: "black", fontSize: "20px" }}
                 className="task-header"
                 id={task._id}
                 as={Button}
@@ -58,10 +64,12 @@ function Task({ tasks }) {
                 {task.title}
               </Accordion.Toggle>
 
-              <Button id="complete-task" variant="info"
-              onClick={(e) => {
-                handleCompleteTask(e);
-              }}
+              <Button
+                id="complete-task"
+                variant="info"
+                onClick={(e) => {
+                  handleCompleteTask(e);
+                }}
               >
                 Complete ✓
               </Button>
@@ -74,16 +82,12 @@ function Task({ tasks }) {
               >
                 X
               </Button>
-              
             </Card.Header>
             <Accordion.Collapse
               style={{ fontSize: "17px", color: "rgb(36, 35, 35)" }}
               eventKey="0"
             >
-              <Card.Body>
-              <Card.Subtitle className="mb-2 text-muted mb-1">Date Created: {task.date}</Card.Subtitle>
-                {task.body}
-                </Card.Body>
+              <Card.Body>{task.body}</Card.Body>
             </Accordion.Collapse>
           </Card>
         </Accordion>

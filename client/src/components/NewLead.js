@@ -60,7 +60,11 @@ function NewLead() {
 
       <Modal className="lead-modal" show={show} onHide={handleClose}>
         <Modal.Header
-          style={{ fontWeight: "bold", color: "rgb(43, 41, 41)" }}
+          style={{
+            fontWeight: "bold",
+            color: "rgb(3, 73, 94)",
+            fontFamily: "Courier New, Courier, monospace",
+          }}
           closeButton
         >
           Add a Lead
@@ -85,8 +89,7 @@ function NewLead() {
             />
           </Form.Group>
 
-          <Form.Group controlId="formGroupEmail"
-          >
+          <Form.Group controlId="formGroupEmail">
             <Form.Control
               type="email"
               placeholder="Email address"

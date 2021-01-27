@@ -39,7 +39,7 @@ function NewTask() {
   return (
     <>
       <Button
-        style = {{fontWeight: "bold"}}
+        style={{ fontWeight: "bold" }}
         className="new-task-button"
         variant="info"
         onClick={handleShow}
@@ -49,7 +49,7 @@ function NewTask() {
 
       <Modal className="task-modal" show={show} onHide={handleClose}>
         <Modal.Header
-          style={{ fontWeight: "bold", color: "rgb(43, 41, 41)" }}
+          style={{ fontWeight: "bold", color: "rgb(3, 73, 94)" }}
           closeButton
         >
           Add a Task

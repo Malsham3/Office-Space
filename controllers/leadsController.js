@@ -1,29 +1,29 @@
 const Leads = require("../models/leads");
 
 module.exports = {
-  findAll: function (req, res) {
-    Leads.find(req.query)
+  findAll: async function (req, res) {
+    await Leads.find(req.query)
       .sort({ date: -1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  findById: function (req, res) {
-    Leads.findById(req.params.id)
+  findById: async function (req, res) {
+    await Leads.findById(req.params.id)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  create: function (req, res) {
-    Leads.create(req.body)
+  create: async function (req, res) {
+    await Leads.create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  update: function (req, res) {
-    Leads.findOneAndUpdate({ _id: req.params.id }, req.body)
+  update: async function (req, res) {
+    await Leads.findOneAndUpdate({ _id: req.params.id }, req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  remove: function (req, res) {
-    Leads.findById({ _id: req.params.id })
+  remove: async function (req, res) {
+    await Leads.findById({ _id: req.params.id })
       .then((dbModel) => dbModel.remove())
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
