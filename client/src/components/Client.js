@@ -8,15 +8,6 @@ import ClientCard from "./ClientCard";
 function Client({ clients }) {
   const [globalState, dispatch] = useStoreContext();
 
-  function handleRemoveClient(id) {
-    API.deleteLead(id).then(({ data }) =>
-      dispatch({
-        type: "REMOVE_LEAD",
-        payload: data,
-      })
-    );
-  }
-
   return (
     // dynamically generate client row with a check box / button.
     <>
