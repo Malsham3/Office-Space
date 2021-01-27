@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { auth } from "../firebase";
 import { Form, Container, Card, Col, Button } from "react-bootstrap";
+import { Redirect } from "react-router-dom";
 import "./Style.css";
+import { useStoreContext } from "../utils/GlobalState";
 
 function SignIn() {
+  const [globalState, dispatch] = useStoreContext();
   let [credentials, SetCredentials] = useState({
     email: "",
     password: "",
   });
   let [signUp, setSignUp] = useState(false);
+  let [isSignedIn, setIsSignedIn] = useState(false);
 
   let [errorMessage, setErrorMessage] = useState("");
 
@@ -16,10 +20,11 @@ function SignIn() {
     e.preventDefault();
 
     try {
-      await auth().signInWithEmailAndPassword(
-        credentials.email,
-        credentials.password
-      );
+      await auth()
+        .signInWithEmailAndPassword(credentials.email, credentials.password)
+        .then(() => {
+          setIsSignedIn(true);
+        });
     } catch ({ message }) {
       setErrorMessage(message);
     }
@@ -28,10 +33,11 @@ function SignIn() {
   async function handleSignUp(e) {
     e.preventDefault();
     try {
-      await auth().createUserWithEmailAndPassword(
-        credentials.email,
-        credentials.password
-      );
+      await auth()
+        .createUserWithEmailAndPassword(credentials.email, credentials.password)
+        .then(() => {
+          setIsSignedIn(true);
+        });
     } catch ({ message }) {
       setErrorMessage(message);
     }
@@ -48,7 +54,9 @@ function SignIn() {
     });
   }
 
-  if (!signUp) {
+  if (isSignedIn){
+    return <Redirect to="/home" />;
+  } else if (!signUp) {
     return (
       <Container className="login-container">
         <Card
@@ -171,6 +179,7 @@ function SignIn() {
       </Container>
     );
   }
+ 
 }
 
 export default SignIn;

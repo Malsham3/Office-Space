@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import SignOut from "./components/SignOut";
@@ -8,27 +8,33 @@ import { useStoreContext } from "./utils/GlobalState";
 
 function App() {
   const [globalState, dispatch] = useStoreContext();
+  const [localUser, setLocalUser] = useState()
 
-  const userEmail = auth().onAuthStateChanged((user) => {
-    return user.email;
+  auth().onAuthStateChanged((user) => {
+    if (user) {
+      setLocalUser(user.email)
+    }
   });
   useEffect(() => {
     dispatch({
       type: "SET_USER",
-      payload: userEmail,
-    });
-  }, []);
+      payload: localUser,
+    })
+  }, [localUser]);
 
   if (!globalState.user) {
-    return <Route path="/home" component={Signup} />;
+    return(
+      <Switch>
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/signout" component={SignOut} />
+      </Switch>
+    ) 
   } else {
     return (
-      <>
         <Switch>
           <Route path="/home" component={Home} />
           <Route exact path="/signout" component={SignOut} />
         </Switch>
-      </>
     );
   }
 }
