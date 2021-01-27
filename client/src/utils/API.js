@@ -18,8 +18,8 @@ export default {
     return axios.post("/api/note", noteData);
   },
   // Updates a note to the database with the given up
-  updateNote: function(id, noteData){
-    return axios.put("/api/note/" + id, noteData)
+  updateNote: function (id, noteData) {
+    return axios.put("/api/note/" + id, noteData);
   },
 
   // Gets all leads
@@ -38,8 +38,28 @@ export default {
   saveLead: function (leadData) {
     return axios.post("/api/leads", leadData);
   },
+  updateLead: function (id, leadData) {
+    return axios.put("/api/leads/" + id, leadData);
+  },
 
-  updateLead: function(id, leadData){
-    return axios.put("/api/leads/" + id, leadData)
-  }
+  // Gets all dates
+  getDates: function () {
+    return axios.get("/api/dates");
+  },
+  // Gets the date with the given id
+  getDate: function (id) {
+    return axios.get("/api/dates/" + id);
+  },
+  // Deletes the Date with the given id
+  deleteDate: function (id) {
+    return axios.delete("/api/dates/" + id);
+  },
+  // Saves a date to the database
+  saveDate: function (dateData) {
+    return axios.post("/api/dates", dateData);
+  },
+  // Updates a date to the database with the given up
+  updateDate: function (id, dateData) {
+    return axios.put("/api/dates/" + id, dateData);
+  },
 };

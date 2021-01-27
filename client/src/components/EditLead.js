@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useStoreContext } from "../utils/GlobalState";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import API from "../utils/API";
 import "./Style.css";
 
-function EditLead({client}) {
+function EditLead({ client }) {
   // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
   const [show, setShow] = useState(false);
@@ -39,10 +39,7 @@ function EditLead({client}) {
 
   return (
     <>
-      <Link
-        onClick={handleShow}
-        style={{ color: "navy" }}
-      >
+      <Link onClick={handleShow} style={{ color: "navy" }}>
         Edit Info
       </Link>
 

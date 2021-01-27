@@ -6,6 +6,6 @@ const datesRoutes = require("./dates");
 // Post routes
 router.use("/note", noteRoutes);
 router.use("/leads", leadsRoutes);
-router.use("/activities", datesRoutes);
+router.use("/dates", datesRoutes);
 
 module.exports = router;

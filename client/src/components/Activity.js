@@ -1,42 +1,35 @@
-import React from 'react'
+import React from "react";
 import { Accordion, Card, Button } from "react-bootstrap";
 import "./Style.css";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 
-function Activity({dates}) {
+function Activity({ dates }) {
+  const [globalState, dispatch] = useStoreContext();
 
-    const [globalState, dispatch] = useStoreContext();
-
-    return (
-    // dynamically generate task row with a check box / button.
+  return (
+    // dynamically generate date row with a check box / button.
     <>
       {dates.map((date) => (
-        <Accordion key={task._id}>
+        <Accordion key={date._id}>
           <Card>
             <Card.Header>
               <Accordion.Toggle
                 style={{ color: "black", fontSize: "20px" }}
-                className="task-header"
+                className="date-header"
                 id={date._id}
                 as={Button}
                 variant="link"
                 eventKey="0"
               >
-                HEADER/TITLE
+                {date.title}
               </Accordion.Toggle>
 
               {/* EDIT AND DELETE BUTTONS HERE */}
-              <Button
-                id="complete-task"
-                variant="info"
-              >
+              <Button id="complete-date" variant="info">
                 Edit
               </Button>
-              <Button
-                id="delete-task"
-                variant="danger"
-              >
+              <Button id="delete-date" variant="danger">
                 X
               </Button>
             </Card.Header>
@@ -46,9 +39,9 @@ function Activity({dates}) {
             >
               <Card.Body>
                 <Card.Subtitle className="mb-2 text-muted mb-2">
-                  SUBTITLES
+                  Date Created: {date.dateCreated}
                 </Card.Subtitle>
-                CONTENT
+                {date.activity}
               </Card.Body>
             </Accordion.Collapse>
           </Card>
@@ -58,4 +51,4 @@ function Activity({dates}) {
   );
 }
 
-export default Activity
+export default Activity;
