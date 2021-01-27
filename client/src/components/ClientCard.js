@@ -35,13 +35,16 @@ function ClientCard({ client }) {
     <>
       <div className="row">
         <ul className="col-10" style={{ maxHeight: "50%", listStyle: "none" }}>
-          <li>Email: {client.email}</li>
+          <li>Email: 
+            {" "}
+            <a href={"mailto:" + client.email}>{client.email}</a>
+            </li>
           <br />
           <li>Phone Number: {client.phone}</li>
         </ul>
 
         <div className="col-2" style={{ maxHeight: "50%" }}>
-          <Image src={client.image} thumbnail />
+          <Image className = "profile-pic" src="http://placekitten.com/200/300" thumbnail />
         </div>
       </div>
 
