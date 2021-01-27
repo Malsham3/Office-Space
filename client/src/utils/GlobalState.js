@@ -82,6 +82,12 @@ const reducer = (state, action) => {
         }),
       };
 
+    case "SELECTED_DATE":
+      return {
+        ...state,
+        selectedDate: action.payload,
+      };
+
     default:
       return state;
   }
@@ -92,6 +98,7 @@ const StoreProvider = ({ value = [], ...props }) => {
     notes: [],
     leads: [],
     dates: [],
+    selectedDate: "",
   });
 
   return <Provider value={[state, dispatch]} {...props} />;

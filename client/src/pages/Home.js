@@ -7,7 +7,7 @@ import { useStoreContext, StoreProvider } from "../utils/GlobalState";
 // import ClientCard from "../components/ClientCard";
 // import NewLead from "../components/NewLead";
 import LeadsContainer from "../components/LeadsContainer";
-import MyCalendar from "../components/MyCalendar";
+import MyCalendar from "../components/MiniCalendar";
 import "../components/Style.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
