@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { auth } from "../firebase";
 import { Form, Container, Card, Col, Button } from "react-bootstrap";
-import { Redirect } from "react-router-dom";
 import "./Style.css";
 import { useStoreContext } from "../utils/GlobalState";
 
@@ -20,11 +19,10 @@ function SignIn() {
     e.preventDefault();
 
     try {
-      await auth()
-        .signInWithEmailAndPassword(credentials.email, credentials.password)
-        .then(() => {
-          setIsSignedIn(true);
-        });
+      await auth().signInWithEmailAndPassword(
+        credentials.email,
+        credentials.password
+      );
     } catch ({ message }) {
       setErrorMessage(message);
     }
@@ -33,11 +31,10 @@ function SignIn() {
   async function handleSignUp(e) {
     e.preventDefault();
     try {
-      await auth()
-        .createUserWithEmailAndPassword(credentials.email, credentials.password)
-        .then(() => {
-          setIsSignedIn(true);
-        });
+      await auth().createUserWithEmailAndPassword(
+        credentials.email,
+        credentials.password
+      );
     } catch ({ message }) {
       setErrorMessage(message);
     }

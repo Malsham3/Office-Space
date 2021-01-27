@@ -13,10 +13,9 @@ function App() {
   auth().onAuthStateChanged((user) => {
     if (user) {
       setLocalUser(user.email);
-    }else(
-      setLocalUser("")
-    )
+    } else setLocalUser("");
   });
+
   useEffect(() => {
     dispatch({
       type: "SET_USER",
