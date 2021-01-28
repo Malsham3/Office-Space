@@ -243,17 +243,22 @@ body {
   font-weight: bold;
 }
 
-.activity-form{
+.activity-form {
   width: 75%;
   margin-top: 15px;
   margin-left: 15px;
 }
 
-.activity-modal{
+.activity-modal {
   font-size: 25px;
 }
 
-.fall{
+.fall {
   transform: translateY(8rem) rotateZ(20deg);
   opacity: 0.5;
+}
+
+.btn {
+  padding-right: 0%;
+  padding-left: 0%;
 }
