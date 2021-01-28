@@ -2,7 +2,7 @@ import React from "react";
 import "./Style.css";
 import { Jumbotron, Button } from "react-bootstrap";
 
-function Header({ title, tag }) {
+function NewUserHeader({ title, tag }) {
   return (
     <>
       <Jumbotron
@@ -21,22 +21,9 @@ function Header({ title, tag }) {
           <h1 style={{ fontWeight: "bold" }}>{title}</h1>
           <p style={{ fontSize: "17px" }}>{tag}.</p>
         </div>
-        <div className="signout-anchor mr-3 ">
-          <Button
-            className="signout-button"
-            style={{
-              backgroundColor: "#4C4646",
-              color: "white",
-            }}
-            href="/signout"
-            variant="light"
-          >
-            Sign Out
-          </Button>
-        </div>
       </Jumbotron>
     </>
   );
 }
 
-export default Header;
+export default NewUserHeader;

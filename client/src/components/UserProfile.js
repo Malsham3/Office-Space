@@ -4,11 +4,14 @@ import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Button from "react-bootstrap/Button";
 import "./Style.css";
 import { Link } from "react-router-dom";
+import Header from "./Header"
 
 function UserProfile({ name, jobTitle, userPic }) {
   // this will be how we decide what to view based on button click
 
   return (
+    <>
+    <Header title="Office Space" tag="I'll burn the building down" />
     <Card className="user-profile-card">
       <Card.Img
         style={{
@@ -56,6 +59,7 @@ function UserProfile({ name, jobTitle, userPic }) {
         </Button>
       </ButtonGroup>
     </Card>
+    </>
   );
 }
 

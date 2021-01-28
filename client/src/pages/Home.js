@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/Header";
 import UserProfile from "../components/UserProfile";
 import Footer from "../components/Footer";
 import TasksContainer from "../components/TasksContainer";
@@ -13,9 +12,9 @@ function Home() {
   return (
     <Router>
       <div id="wrapper">
-        <Header title="Office Space" tag="I'll burn the building down" />
-        <div className="main-display-row">
+        {/* <Header title="Office Space" tag="I'll burn the building down" /> */}
           <UserProfile />
+        <div className="main-display-row">
           <Route path="/taskscomponents" component={TasksContainer} />
           <Route path="/leadcomponents" component={LeadsContainer} />
           <Route path="/calendarcomponents" component={ActivityContainer} />
