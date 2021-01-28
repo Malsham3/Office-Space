@@ -29,7 +29,7 @@ function ActivityContainer() {
   return (
     <div className="componentHolder ml-2">
       <div style={{ display: "flex" }}>
-        <div style={{ width: "45vw" }}>
+        <div style={{ width: "47vw" }}>
           <NewActivity />
           <Accordion>
             <Activity dates={dates} />
