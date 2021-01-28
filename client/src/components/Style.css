@@ -253,7 +253,6 @@ body {
   font-size: 25px;
 }
 
-<<<<<<< HEAD
 .date-header {
   font-family: "Courier New", Courier, monospace;
   color: rgb(3, 73, 94);
@@ -280,9 +279,8 @@ body {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
 }
-=======
+
 .fall{
   transform: translateY(8rem) rotateZ(20deg);
   opacity: 0.5;
 }
->>>>>>> 1aa365e4e8679dc1295f3117ee10079e836ec141
