@@ -9,6 +9,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
@@ -18,7 +19,15 @@ app.use(routes);
 mongoose.set("useNewUrlParser", true);
 mongoose.set("useUnifiedTopology", true);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactCRM");
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/reactCRM',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 // Define API routes here
 
 // Send every other request to the React app
