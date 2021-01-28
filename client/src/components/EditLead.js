@@ -39,7 +39,10 @@ function EditLead({ client }) {
 
   return (
     <>
-      <Link onClick={handleShow} style={{ color: "navy" }}>
+      <Link
+        onClick={handleShow}
+        style={{ color: "navy", fontFamily: "Courier" }}
+      >
         Edit Info
       </Link>
 

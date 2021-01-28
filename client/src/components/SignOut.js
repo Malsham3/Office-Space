@@ -4,9 +4,8 @@ import { Redirect } from "react-router-dom";
 import { useStoreContext } from "../utils/GlobalState";
 
 function SignOut() {
-  const [globalState, dispatch] =useStoreContext();
+  const [globalState, dispatch] = useStoreContext();
   let [succesful, setSuccessful] = useState(false);
-
 
   useEffect(() => {
     dispatch({
@@ -24,7 +23,7 @@ function SignOut() {
   }, []);
 
   if (succesful) {
-    return <Redirect to="/home" />;
+    return <Redirect to="/" />;
   } else {
     return <h1>"Signing you out.."</h1>;
   }
