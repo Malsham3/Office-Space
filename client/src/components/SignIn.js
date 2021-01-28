@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import { auth } from "../firebase";
 import { Form, Container, Card, Col, Button } from "react-bootstrap";
 import "./Style.css";
+import { useStoreContext } from "../utils/GlobalState";
 
 function SignIn() {
+  const [globalState, dispatch] = useStoreContext();
   let [credentials, SetCredentials] = useState({
     email: "",
     password: "",
   });
   let [signUp, setSignUp] = useState(false);
+  let [isSignedIn, setIsSignedIn] = useState(false);
 
   let [errorMessage, setErrorMessage] = useState("");
 

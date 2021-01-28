@@ -7,7 +7,6 @@ import { useStoreContext } from "../utils/GlobalState";
 
 function TasksContainer() {
   const [globalState, dispatch] = useStoreContext();
-
   // the tasks array will need to be set to whatever gets returned from the server
   let tasks = globalState.notes;
 

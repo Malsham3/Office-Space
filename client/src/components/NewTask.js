@@ -8,7 +8,7 @@ function NewTask() {
   // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
   const [show, setShow] = useState(false);
-
+  
   const titleRef = useRef("");
   const newTodoRef = useRef("");
 
@@ -17,7 +17,9 @@ function NewTask() {
 
   const handleNewTodo = (e) => {
     e.preventDefault();
+    console.log(globalState);
     API.saveNote({
+      // user: globalState.user,
       title: titleRef.current.value,
       body: newTodoRef.current.value,
       completed: false,

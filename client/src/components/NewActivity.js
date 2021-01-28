@@ -19,7 +19,7 @@ function NewActivity() {
   const handleNewActivity = (e) => {
     e.preventDefault();
     API.saveDate({
-      user: "Testing",
+      user: globalState.user,
       date: globalState.selectedDate,
       title: titleRef.current.value,
       activity: activityRef.current.value,
@@ -62,7 +62,6 @@ function NewActivity() {
         </Modal.Header>
 
         <Form className="activity-form">
-
           <Form.Group controlId="formGroupTitle">
             <Form.Control
               type="text-box"
@@ -71,14 +70,10 @@ function NewActivity() {
               required
             />
           </Form.Group>
-          
-          <Form.Group controlId="ControlTextarea1"
-          className = "activity-body">
+
+          <Form.Group controlId="ControlTextarea1" className="activity-body">
             <Form.Label>Activity</Form.Label>
-            <Form.Control as="textarea" rows={3} 
-            ref={activityRef}
-            required
-            />
+            <Form.Control as="textarea" rows={3} ref={activityRef} required />
           </Form.Group>
         </Form>
 

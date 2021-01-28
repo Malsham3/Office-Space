@@ -30,7 +30,7 @@ function UserProfile({ name, jobTitle, userPic }) {
           className="user-button"
           name="task"
         >
-          <Link className="user-links" to="/home/taskscomponents">
+          <Link className="user-links" to="/taskscomponents">
             Tasks
           </Link>
         </Button>
@@ -40,7 +40,7 @@ function UserProfile({ name, jobTitle, userPic }) {
           className="user-button"
           name="leads"
         >
-          <Link className="user-links" to="/home/leadcomponents">
+          <Link className="user-links" to="/leadcomponents">
             Leads
           </Link>
         </Button>
@@ -50,7 +50,7 @@ function UserProfile({ name, jobTitle, userPic }) {
           className="user-button"
           name="calendar"
         >
-          <Link className="user-links" to="/home/calendarcomponents">
+          <Link className="user-links" to="/calendarcomponents">
             Calendar
           </Link>
         </Button>

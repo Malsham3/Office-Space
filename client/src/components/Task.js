@@ -9,13 +9,20 @@ function Task({ tasks }) {
   // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
 
+  
   function handleRemoveTask(id) {
-    API.deleteNote(id).then(({ data }) =>
-      dispatch({
-        type: "REMOVE_NOTE",
-        payload: data,
-      })
-    );
+    const item = document.getElementById(id)
+    const taskItem = item.parentElement;
+    console.log(taskItem)
+    taskItem.classList.add("fall");
+    taskItem.addEventListener('transitionend', function(){
+      API.deleteNote(id).then(({ data }) =>
+        dispatch({
+          type: "REMOVE_NOTE",
+          payload: data,
+        })
+      );
+    })
   }
 
   const completeStyle = {
@@ -39,7 +46,7 @@ function Task({ tasks }) {
     <>
       {tasks.map((task) => (
         <Accordion key={task._id}>
-          <Card>
+          <Card id = {task._id}>
             <Card.Header>
               <Accordion.Toggle
                 style={
@@ -48,7 +55,6 @@ function Task({ tasks }) {
                     : { color: "black", fontSize: "20px" }
                 }
                 className="task-header"
-                id={task._id}
                 as={Button}
                 variant="link"
                 eventKey="0"
