@@ -8,7 +8,7 @@ function NewTask() {
   // eslint-disable-next-line
   const [globalState, dispatch] = useStoreContext();
   const [show, setShow] = useState(false);
-  
+
   const titleRef = useRef("");
   const newTodoRef = useRef("");
 
@@ -66,10 +66,11 @@ function NewTask() {
             />
           </Form.Group>
           <Form.Group
-            className="task-body"
+            className="task-body btn-style-that-were-using-to-overwrite-the-btn-class-padding"
             controlId="exampleForm.ControlTextarea1"
           >
             <Form.Control
+              className="btn-style-that-were-using-to-overwrite-the-btn-class-padding"
               as="textarea"
               rows={2}
               placeholder="Body"
