@@ -262,3 +262,30 @@ body {
   padding-right: 0%;
   padding-left: 0%;
 }
+
+.date-header {
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(3, 73, 94);
+}
+
+.text-muted {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.lead-modal {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.row {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.client-header {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.card-body {
+  color: rgb(3, 73, 94);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
