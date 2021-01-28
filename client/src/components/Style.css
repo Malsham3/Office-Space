@@ -243,12 +243,39 @@ body {
   font-weight: bold;
 }
 
-.activity-form{
+.activity-form {
   width: 75%;
   margin-top: 15px;
   margin-left: 15px;
 }
 
-.activity-modal{
+.activity-modal {
   font-size: 25px;
+}
+
+.date-header {
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(3, 73, 94);
+}
+
+.text-muted {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.lead-modal {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.row {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.client-header {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.card-body {
+  color: rgb(3, 73, 94);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
 }

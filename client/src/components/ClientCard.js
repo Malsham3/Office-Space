@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Style.css";
 import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
-import EditLead from "./EditLead"
+import EditLead from "./EditLead";
 
 function ClientCard({ client }) {
   const [globalState, dispatch] = useStoreContext();
@@ -35,33 +35,34 @@ function ClientCard({ client }) {
     <>
       <div className="row">
         <ul className="col-10" style={{ maxHeight: "50%", listStyle: "none" }}>
-          <li>Full name: {client.first} {client.last}</li>
+          <li>
+            Full name: {client.first} {client.last}
+          </li>
           <br />
-          <li>Email: 
-            {" "}
-            <a href={"mailto:" + client.email}>{client.email}</a>
-            </li>
+          <li>
+            Email: <a href={"mailto:" + client.email}>{client.email}</a>
+          </li>
           <br />
           <li>Phone Number: {client.phone}</li>
         </ul>
 
         <div className="col-2" style={{ maxHeight: "50%" }}>
-          <Image className = "profile-pic" src={client.image? client.image : null} thumbnail />
+          <Image
+            className="profile-pic"
+            src={client.image ? client.image : null}
+            thumbnail
+          />
         </div>
       </div>
-
       <Link
         onClick={() => {
           handleRemoveClient(client._id);
         }}
-        style={{ color: "red" }}
+        style={{ color: "red", fontFamily: "Courier" }}
       >
         Remove Client
-      </Link>
-      {" "}
-      {" | "}
-      {" "}
-      <EditLead client= {client}/>
+      </Link>{" "}
+      {" | "} <EditLead client={client} />
     </>
   );
 }

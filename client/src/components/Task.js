@@ -1,5 +1,5 @@
 import { Accordion, Card, Button } from "react-bootstrap";
-import Moment from 'react-moment';
+import Moment from "react-moment";
 import "./Style.css";
 import React from "react";
 import API from "../utils/API";
@@ -25,7 +25,7 @@ function Task({ tasks }) {
   };
 
   function handleUpdateTask(id, notedata) {
-    notedata.completed = !notedata.completed
+    notedata.completed = !notedata.completed;
     API.updateNote(id, notedata).then(({ data }) =>
       dispatch({
         type: "UPDATE_NOTES",
@@ -80,16 +80,9 @@ function Task({ tasks }) {
             >
               <Card.Body>
                 <Card.Subtitle className="text-muted mb-3">
-                Date Created: {" "}
-                  <Moment format="ddd MM/DD/YY">
-                  {task.date}
-                  </Moment>
-                  {" "}
-                  at 
-                  {" "}
-                  <Moment format="hh:mm a">
-                  {task.date}
-                  </Moment>
+                  Date Created:{" "}
+                  <Moment format="ddd MM/DD/YY">{task.date}</Moment> at{" "}
+                  <Moment format="hh:mm a">{task.date}</Moment>
                 </Card.Subtitle>
                 {task.body}
               </Card.Body>
