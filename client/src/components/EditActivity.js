@@ -20,7 +20,6 @@ function EditActivity({ date }) {
     activityData.title = titleRef.current.value;
     activityData.activity = activityRef.current.value;
 
-
     API.updateDate(id, activityData).then(({ data }) =>
       dispatch({
         type: "UPDATE_DATE",
@@ -34,7 +33,10 @@ function EditActivity({ date }) {
 
   return (
     <>
-      <Link onClick={handleShow} style={{ color: "navy" }}>
+      <Link
+        onClick={handleShow}
+        style={{ color: "navy", fontFamily: "Courier" }}
+      >
         Edit
       </Link>
 
@@ -61,12 +63,8 @@ function EditActivity({ date }) {
           </Form.Group>
 
           <Form.Group controlId="formGroupEmail">
-            <Form.Control as="textarea" rows={3} 
-              ref={activityRef}
-              required
-            />
+            <Form.Control as="textarea" rows={3} ref={activityRef} required />
           </Form.Group>
-
         </Form>
 
         <Modal.Footer>
