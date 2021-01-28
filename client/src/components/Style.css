@@ -253,6 +253,16 @@ body {
   font-size: 25px;
 }
 
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0.5;
+}
+
+.btn {
+  padding-right: 0%;
+  padding-left: 0%;
+}
+
 .date-header {
   font-family: "Courier New", Courier, monospace;
   color: rgb(3, 73, 94);
@@ -278,9 +288,4 @@ body {
   color: rgb(3, 73, 94);
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
-}
-
-.fall{
-  transform: translateY(8rem) rotateZ(20deg);
-  opacity: 0.5;
 }
