@@ -50,11 +50,7 @@ function Activity({ dates }) {
                   <Moment format="hh:mm a">{date.dateCreated}</Moment>
                 </Card.Subtitle>
                 <Card.Text>{date.activity}</Card.Text>
-<<<<<<< HEAD
                 <Link
-=======
-                <Link value="stuff"
->>>>>>> 1aa365e4e8679dc1295f3117ee10079e836ec141
                   onClick={() => {
                     handleRemoveDate(date._id);
                   }}
