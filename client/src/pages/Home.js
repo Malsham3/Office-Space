@@ -18,10 +18,7 @@ function Home() {
           <UserProfile />
           <Route path="/taskscomponents" component={TasksContainer} />
           <Route path="/leadcomponents" component={LeadsContainer} />
-          <Route
-            path="/home/calendarcomponents"
-            component={ActivityContainer}
-          />
+          <Route path="/calendarcomponents" component={ActivityContainer} />
         </div>
         <Footer />
       </div>
