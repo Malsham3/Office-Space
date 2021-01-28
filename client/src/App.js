@@ -26,14 +26,14 @@ function App() {
   if (!localUser) {
     return (
       <Switch>
-        <Route exact path="/home" component={Signup} />
+        <Route exact path="/" component={Signup} />
         <Route exact path="/signout" component={SignOut} />
       </Switch>
     );
   } else {
     return (
       <Switch>
-        <Route path="/home" component={Home} />
+        <Route path="/" component={Home} />
         <Route exact path="/signout" component={SignOut} />
       </Switch>
     );
