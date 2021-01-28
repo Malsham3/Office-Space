@@ -29,14 +29,14 @@ function ActivityContainer() {
   return (
     <div className="componentHolder ml-2">
       <div style={{ display: "flex" }}>
-        <div style={{ width: "39vw" }}>
+        <div style={{ width: "45vw" }}>
           <NewActivity />
           <Accordion>
             <Activity dates={dates} />
           </Accordion>
         </div>
-        <div style={{float: "right"}}>
-        <MiniCalendar />
+        <div style={{ float: "right" }}>
+          <MiniCalendar />
         </div>
       </div>
     </div>
