@@ -111,8 +111,8 @@ body {
 
 /* User Profile styling */
 .user-profile-card {
-  max-width: 33vw;
-  min-width: 33vw;
+  max-width: 25vw;
+  min-width: 25vw;
   height: 100%;
   border: 3px solid grey;
   border-radius: 5px;
@@ -257,8 +257,8 @@ body {
   transform: translateY(8rem) rotateZ(20deg);
   opacity: 0.5;
 }
-
-.btn {
+/* this is the new name of the class for the stuff and things we need to apply to just the button group that we want to change */
+.btn-style-that-were-using-to-overwrite-the-btn-class-padding {
   padding-right: 0%;
   padding-left: 0%;
 }

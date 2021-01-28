@@ -27,7 +27,7 @@ function UserProfile({ name, jobTitle, userPic }) {
       <ButtonGroup className="button-group" vertical>
         <Button
           style={{ backgroundColor: "rgb(3, 73, 94)" }}
-          className="user-button"
+          className="user-button btn-style-that-were-using-to-overwrite-the-btn-class-padding"
           name="task"
         >
           <Link className="user-links" to="/taskscomponents">
@@ -37,7 +37,7 @@ function UserProfile({ name, jobTitle, userPic }) {
 
         <Button
           style={{ backgroundColor: "rgb(3, 73, 94)" }}
-          className="user-button"
+          className="user-button btn-style-that-were-using-to-overwrite-the-btn-class-padding"
           name="leads"
         >
           <Link className="user-links" to="/leadcomponents">
@@ -47,7 +47,7 @@ function UserProfile({ name, jobTitle, userPic }) {
 
         <Button
           style={{ backgroundColor: "rgb(3, 73, 94)" }}
-          className="user-button"
+          className="user-button btn-style-that-were-using-to-overwrite-the-btn-class-padding"
           name="calendar"
         >
           <Link className="user-links" to="/calendarcomponents">
