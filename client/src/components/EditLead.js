@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useStoreContext } from "../utils/GlobalState";
-import { Link } from "react-router-dom";
 import API from "../utils/API";
 import "./Style.css";
 
@@ -20,6 +19,7 @@ function EditLead({ client }) {
   const handleShow = () => setShow(true);
 
   function handleUpdateLead(id, leadData) {
+    console.log(leadData)
     leadData.first = firstnameRef.current.value;
     leadData.last = lastnameRef.current.value;
     leadData.email = emailRef.current.value;
@@ -39,12 +39,12 @@ function EditLead({ client }) {
 
   return (
     <>
-      <Link
+      <Button
         onClick={handleShow}
         style={{ color: "navy", fontFamily: "Courier" }}
       >
         Edit Info
-      </Link>
+      </Button>
 
       <Modal className="lead-modal" show={show} onHide={handleClose}>
         <Modal.Header
