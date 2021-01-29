@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Image, Button } from "react-bootstrap";
+// import { Link } from "react-router-dom";
 import "./Style.css";
 import { useStoreContext } from "../utils/GlobalState";
 import API from "../utils/API";
@@ -54,14 +54,14 @@ function ClientCard({ client }) {
           />
         </div>
       </div>
-      <Link
+      <Button
         onClick={() => {
           handleRemoveClient(client._id);
         }}
         style={{ color: "red", fontFamily: "Courier" }}
       >
         Remove Client
-      </Link>{" "}
+      </Button>{" "}
       {" | "} <EditLead client={client} />
     </>
   );

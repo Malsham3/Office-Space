@@ -92,7 +92,6 @@ const reducer = (state, action) => {
         selectedDate: action.payload,
       };
     case "SET_USER":
-      console.log(state)
       return {
         ...state,
         user: action.payload,

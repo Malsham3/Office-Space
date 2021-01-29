@@ -12,7 +12,7 @@ function Task({ tasks }) {
   function handleRemoveTask(id) {
     const item = document.getElementById(id);
     const taskItem = item.parentElement;
-    console.log(taskItem);
+    
     taskItem.classList.add("fall");
     taskItem.addEventListener("transitionend", function () {
       API.deleteNote(id).then(({ data }) =>
