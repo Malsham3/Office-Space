@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useStoreContext } from "../utils/GlobalState";
-import { Link } from "react-router-dom";
 import API from "../utils/API";
 import "./Style.css";
 

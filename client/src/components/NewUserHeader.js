@@ -1,6 +1,6 @@
 import React from "react";
 import "./Style.css";
-import { Jumbotron, Button } from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
 
 function NewUserHeader({ title, tag }) {
   return (
