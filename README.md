@@ -57,4 +57,4 @@ The MIT License (MIT) Copyright © 2020 Permission is hereby granted, free of ch
 ### Project Contributors via GitHub User Name: 
 * DaniCutler
 * Rick-Smart
-* Malsham4
+* Malsham3
