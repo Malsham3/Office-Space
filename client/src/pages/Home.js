@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/Header";
 import UserProfile from "../components/UserProfile";
 import Footer from "../components/Footer";
 import TasksContainer from "../components/TasksContainer";
