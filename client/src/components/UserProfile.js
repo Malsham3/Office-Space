@@ -24,7 +24,7 @@ function UserProfile({ name, jobTitle, userPic }) {
         src="https://i.pinimg.com/564x/98/6d/39/986d39470fae3b16f0ae38b551267367.jpg"
       />
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
+        <Card.Title>User: {name}</Card.Title>
         <Card.Text>{jobTitle}</Card.Text>
       </Card.Body>
       <ButtonGroup className="button-group" vertical>

@@ -17,9 +17,8 @@ function NewTask() {
 
   const handleNewTodo = (e) => {
     e.preventDefault();
-    console.log(globalState);
     API.saveNote({
-      // user: globalState.user,
+      user: globalState.user,
       title: titleRef.current.value,
       body: newTodoRef.current.value,
       completed: false,

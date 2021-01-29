@@ -12,11 +12,17 @@ function TasksContainer() {
 
   useEffect(() => {
     API.getNotes()
-      .then(({ data }) =>
+      .then(({ data }) => {
+        const newData = data.filter((note) => {
+          return note.user === globalState.user;
+        });
+        return newData;
+      })
+      .then((newData) =>
         dispatch(
           {
             type: "LOAD_TASKS",
-            payload: data,
+            payload: newData,
           },
           []
         )

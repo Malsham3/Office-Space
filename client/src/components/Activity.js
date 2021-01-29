@@ -1,6 +1,5 @@
 import React from "react";
 import { Accordion, Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import "./Style.css";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
@@ -50,14 +49,14 @@ function Activity({ dates }) {
                   <Moment format="hh:mm a">{date.dateCreated}</Moment>
                 </Card.Subtitle>
                 <Card.Text>{date.activity}</Card.Text>
-                <Link
+                <Button
                   onClick={() => {
                     handleRemoveDate(date._id);
                   }}
                   style={{ color: "red" }}
                 >
                   Delete
-                </Link>{" "}
+                </Button>{" "}
                 {" | "} <EditActivity date={date} />
               </Card.Body>
             </Accordion.Collapse>
