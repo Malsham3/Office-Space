@@ -33,12 +33,13 @@ function EditActivity({ date }) {
 
   return (
     <>
-      <Link
+      <Button
         onClick={handleShow}
+        variant="light"
         style={{ color: "navy", fontFamily: "Courier" }}
       >
         Edit
-      </Link>
+      </Button>
 
       <Modal className="lead-modal" show={show} onHide={handleClose}>
         <Modal.Header

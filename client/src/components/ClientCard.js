@@ -55,6 +55,7 @@ function ClientCard({ client }) {
         </div>
       </div>
       <Button
+      variant="light"
         onClick={() => {
           handleRemoveClient(client._id);
         }}

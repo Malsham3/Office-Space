@@ -41,6 +41,7 @@ function EditLead({ client }) {
     <>
       <Button
         onClick={handleShow}
+        variant="light"
         style={{ color: "navy", fontFamily: "Courier" }}
       >
         Edit Info

@@ -3,7 +3,7 @@ import "./Style.css";
 
 function Footer() {
   return (
-    <footer className="row footer-div py-2">
+    <footer className="row footer-div py-2 ml-1">
       <div className="col-10">
         <span className="text-muted">
           Made with
