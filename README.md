@@ -8,6 +8,10 @@ This CRM will support complex and ever-changing workflows by automating, complet
 
 ### DEPLOYED LINK: https://blooming-spire-58997.herokuapp.com/
 
+![taskcreated](https://user-images.githubusercontent.com/72281065/106234736-8f3cca00-61b6-11eb-8985-066cbc9f5fbf.JPG)
+![leadpage](https://user-images.githubusercontent.com/72281065/106234743-91068d80-61b6-11eb-8ce7-0b9cecbfc3e0.JPG)
+![calendar](https://user-images.githubusercontent.com/72281065/106234746-9368e780-61b6-11eb-8c14-d0d27117f7ff.JPG)
+
 
 ### TASKS:
 Homepage with Log-in/Sign-up card
