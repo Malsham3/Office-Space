@@ -1,6 +1,5 @@
 import React from "react";
 import UserProfile from "../components/UserProfile";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import TasksContainer from "../components/TasksContainer";
 import { useStoreContext } from "../utils/GlobalState";
@@ -21,7 +20,9 @@ function Home() {
           <Route path="/leadcomponents" component={LeadsContainer} />
           <Route path="/calendarcomponents" component={ActivityContainer} />
         </div>
-        <Footer />
+        <div style={{ position: "fixed", bottom: "0" }}>
+          <Footer />
+        </div>
       </div>
     </Router>
   );
