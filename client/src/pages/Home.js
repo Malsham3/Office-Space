@@ -1,5 +1,6 @@
 import React from "react";
 import UserProfile from "../components/UserProfile";
+import Header from "../components/Header"
 import Footer from "../components/Footer";
 import TasksContainer from "../components/TasksContainer";
 import { useStoreContext } from "../utils/GlobalState";
