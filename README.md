@@ -36,7 +36,7 @@ Calendar page where team members can create activities to be placed on the calen
 
 ### Technologies, Languages, Frameworks being used:
 
-* AMongoDB	
+* MongoDB	
 * Express
 * React	
 * Node JS
