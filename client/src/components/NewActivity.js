@@ -71,8 +71,9 @@ function NewActivity() {
             />
           </Form.Group>
 
-          <Form.Group controlId="ControlTextarea1" className="activity-body">
-            <Form.Label>Activity</Form.Label>
+          <Form.Group controlId="ControlTextarea1"
+          placeholder="Activities.." 
+          className="activity-body">
             <Form.Control as="textarea" rows={3} ref={activityRef} required />
           </Form.Group>
         </Form>

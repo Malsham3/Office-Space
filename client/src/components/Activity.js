@@ -50,6 +50,7 @@ function Activity({ dates }) {
                 </Card.Subtitle>
                 <Card.Text>{date.activity}</Card.Text>
                 <Button
+                variant="light"
                   onClick={() => {
                     handleRemoveDate(date._id);
                   }}
