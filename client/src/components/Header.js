@@ -21,6 +21,10 @@ function Header({ title, tag }) {
           <h1 style={{ fontWeight: "bold" }}>{title}</h1>
           <p style={{ fontSize: "17px" }}>{tag}.</p>
         </div>
+        <div className="logo">
+          <img src={process.env.PUBLIC_URL + "/images/redstapler.png"}></img>
+        </div>
+
         <div className="signout-anchor mr-3 ">
           <Button
             className="signout-button"
